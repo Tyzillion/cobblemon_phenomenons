@@ -1,0 +1,45 @@
+'Grassland/Plains biome Pokemon pool';
+
+v.pokemon = 'undefined';
+
+v.common_pokemon = q.array(
+    'pidgey', 
+    'rattata', 
+    'spearow', 
+    'nidoranm',
+    'nidoranf'
+);
+v.current_weight = 0;
+
+for_each(v.current_pokemon, v.common_pokemon, {
+    v.weight_start = v.current_weight + 1;
+    v.weight_end = v.current_weight + 5;
+    (v.random_weight >= v.weight_start && v.random_weight <= v.weight_end && v.pokemon == 'undefined') ? {
+        v.pokemon = v.current_pokemon;
+    };
+    v.current_weight = v.current_weight + 5;
+});
+
+v.uncommon_pokemon = q.run_script('cobblemon:grass_uncommon');
+
+for_each(v.current_pokemon, v.uncommon_pokemon, {
+    v.weight_start = v.current_weight + 1;
+    v.weight_end = v.current_weight + 3;
+    (v.random_weight >= v.weight_start && v.random_weight <= v.weight_end && v.pokemon == 'undefined') ? {
+        v.pokemon = v.current_pokemon;
+    };
+    v.current_weight = v.current_weight + 3;
+});
+
+v.rare_pokemon = q.run_script('cobblemon:grass_rare');
+
+for_each(v.current_pokemon, v.rare_pokemon, {
+    v.weight_start = v.current_weight + 1;
+    v.weight_end = v.current_weight + 1;
+    (v.random_weight >= v.weight_start && v.random_weight <= v.weight_end && v.pokemon == 'undefined') ? {
+        v.pokemon = v.current_pokemon;
+    };
+    v.current_weight = v.current_weight + 1;
+});
+
+return v.pokemon;

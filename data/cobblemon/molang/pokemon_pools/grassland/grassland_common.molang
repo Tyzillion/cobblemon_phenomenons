@@ -1,0 +1,8 @@
+v.pool_pokemon = q.array(
+    'pidgey', 
+    'rattata', 
+    'spearow', 
+    'nidoranm',
+    'nidoranf'
+);
+return v.pool_pokemon;

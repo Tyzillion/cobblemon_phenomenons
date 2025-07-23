@@ -1,0 +1,41 @@
+'Nether biome Pokemon pool';
+
+t.random_weight = math.random_integer(1, 48);
+
+t.pokemon = 'undefined';
+
+v.common_pokemon = q.run_script('cobblemon:nether_common');
+t.current_weight = 0;
+
+for_each(v.current_pokemon, v.common_pokemon, {
+    t.weight_start = t.current_weight + 1;
+    t.weight_end = t.current_weight + 5;
+    (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && t.pokemon = 'undefined') ? {
+        t.pokemon = v.current_pokemon;
+    };
+    t.current_weight = t.current_weight + 5;
+});
+
+v.uncommon_pokemon = q.run_script('cobblemon:nether_uncommon');
+
+for_each(v.current_pokemon, v.uncommon_pokemon, {
+    t.weight_start = t.current_weight + 1;
+    t.weight_end = t.current_weight + 3;
+    (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && t.pokemon = 'undefined') ? {
+        t.pokemon = v.current_pokemon;
+    };
+    t.current_weight = t.current_weight + 3;
+});
+
+v.rare_pokemon = q.run_script('cobblemon:nether_rare');
+
+for_each(v.current_pokemon, v.rare_pokemon, {
+    t.weight_start = t.current_weight + 1;
+    t.weight_end = t.current_weight + 1;
+    (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && t.pokemon = 'undefined') ? {
+        t.pokemon = v.current_pokemon;
+    };
+    t.current_weight = t.current_weight + 1;
+});
+
+return t.pokemon;

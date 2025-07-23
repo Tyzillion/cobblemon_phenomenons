@@ -1,0 +1,11 @@
+v.pool_pokemon = q.array(
+    'jigglypuff', 
+    'meowth', 
+    'psyduck', 
+    'mankey', 
+    'growlithe', 
+    'machop', 
+    'ponyta', 
+    'doduo'
+);
+return v.pool_pokemon;

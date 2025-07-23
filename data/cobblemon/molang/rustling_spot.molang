@@ -110,27 +110,27 @@ for_each(v.player, t.nearby_entities, {
                 v.player.tell('§7Debug: Detected biome = ' + v.current_biome + ', biome_type = ' + v.biome_type);
 
                 v.biome_type == 'forest' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_forest');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_forest');
                 } : v.biome_type == 'mountain' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_mountain');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_mountain');
                 } : v.biome_type == 'water' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_water');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_water');
                 } : v.biome_type == 'desert' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_desert');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_desert');
                 } : v.biome_type == 'ice' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_ice');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_ice');
                 } : v.biome_type == 'savanna' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_savanna');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_savanna');
                 } : v.biome_type == 'underground' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_underground');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_underground');
                 } : v.biome_type == 'nether' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_nether');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_nether');
                 } : v.biome_type == 'end' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_end');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_end');
                 } : v.biome_type == 'mushroom' ? {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_mushroom');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_mushroom');
                 } : {
-                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_grassland');
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns_grassland');
                 };
 
                 t.pokemon_level = math.floor(math.random(5, 56));
