@@ -1,0 +1,162 @@
+v.npc = q.entity;
+t.detection_radius = 4.0;
+
+t.nearby_entities = v.npc.get_nearby_entities(t.detection_radius);
+
+for_each(v.player, t.nearby_entities, {
+
+    v.player.is_player && !v.player.in_battle ? {
+        
+        v.player.world.game_time > v.player.get_npc_variable(v.npc, 'rustling_cooldown') ? {
+            {
+                t.cooldown_time = v.player.world.game_time + 100;
+                v.player.set_npc_variable(v.npc, 'rustling_cooldown', t.cooldown_time);
+                v.player.save_data();
+                v.current_biome = v.npc.biome;
+                v.biome_type = 'unknown';
+
+                v.forest_biomes = q.array('minecraft:forest', 'minecraft:birch_forest', 'minecraft:dark_forest', 
+                 'minecraft:taiga', 'minecraft:old_growth_birch_forest', 'minecraft:old_growth_pine_taiga',
+                 'minecraft:old_growth_spruce_taiga', 'minecraft:jungle', 'minecraft:sparse_jungle',
+                 'minecraft:bamboo_jungle', 'minecraft:cherry_grove');
+
+                for_each(v.forest_biome, v.forest_biomes, {
+                    (v.current_biome.is_of(v.forest_biome)) ? {
+                        v.biome_type = 'forest';
+                    };
+                });
+
+                v.water_biomes = q.array('minecraft:ocean', 'minecraft:deep_ocean', 'minecraft:lukewarm_ocean',
+                 'minecraft:warm_ocean', 'minecraft:cold_ocean',
+                 'minecraft:river', 'minecraft:frozen_river', 'minecraft:beach', 'minecraft:stony_shore',
+                 'minecraft:swamp', 'minecraft:mangrove_swamp');
+
+                for_each(v.water_biome, v.water_biomes, {
+                    (v.current_biome.is_of(v.water_biome)) ? {
+                        v.biome_type = 'water';
+                    };
+                });
+
+                v.mountain_biomes = q.array('minecraft:mountains', 'minecraft:mountain_edge', 'minecraft:snowy_mountains',
+                 'minecraft:gravelly_mountains', 'minecraft:modified_gravelly_mountains',
+                 'minecraft:extreme_hills', 'minecraft:stony_peaks', 'minecraft:jagged_peaks',
+                 'minecraft:windswept_hills', 'minecraft:windswept_forest', 'minecraft:windswept_gravelly_hills');
+                for_each(v.mountain_biome, v.mountain_biomes, {
+                    (v.current_biome.is_of(v.mountain_biome)) ? {
+                        v.biome_type = 'mountain';
+                    };
+                });
+
+                v.desert_biomes = q.array('minecraft:desert', 'minecraft:badlands', 'minecraft:wooded_badlands',
+                 'minecraft:eroded_badlands', 'minecraft:modified_badlands_plateau',
+                 'minecraft:modified_wooded_badlands_plateau');
+                for_each(v.desert_biome, v.desert_biomes, {
+                    (v.current_biome.is_of(v.desert_biome)) ? {
+                        v.biome_type = 'desert';
+                    };
+                });
+
+                v.ice_biomes = q.array('minecraft:ice_spikes', 'minecraft:snowy_tundra', 'minecraft:snowy_taiga',
+                 'minecraft:snowy_beach', 'minecraft:frozen_peaks', 'minecraft:snowy_slopes',
+                 'minecraft:grove', 'minecraft:snowy_plains', 'minecraft:frozen_ocean');
+                for_each(v.ice_biome, v.ice_biomes, {
+                    (v.current_biome.is_of(v.ice_biome)) ? {
+                        v.biome_type = 'ice';
+                    };
+                });
+
+                v.savanna_biomes = q.array('minecraft:savanna', 'minecraft:savanna_plateau', 'minecraft:windswept_savanna',
+                 'minecraft:shattered_savanna', 'minecraft:shattered_savanna_plateau');
+                for_each(v.savanna_biome, v.savanna_biomes, {
+                    (v.current_biome.is_of(v.savanna_biome)) ? {
+                        v.biome_type = 'savanna';
+                    };
+                });
+
+                v.underground_biomes = q.array('minecraft:deep_dark', 'minecraft:dripstone_caves', 'minecraft:lush_caves');
+                for_each(v.underground_biome, v.underground_biomes, {
+                    (v.current_biome.is_of(v.underground_biome)) ? {
+                        v.biome_type = 'underground';
+                    };
+                });
+
+                v.nether_biomes = q.array('minecraft:nether_wastes', 'minecraft:crimson_forest', 'minecraft:warped_forest',
+                 'minecraft:soul_sand_valley', 'minecraft:basalt_deltas');
+                for_each(v.nether_biome, v.nether_biomes, {
+                    (v.current_biome.is_of(v.nether_biome)) ? {
+                        v.biome_type = 'nether';
+                    };
+                });
+
+                v.end_biomes = q.array('minecraft:the_end', 'minecraft:end_highlands', 'minecraft:end_midlands',
+                 'minecraft:small_end_islands', 'minecraft:end_barrens');
+                for_each(v.end_biome, v.end_biomes, {
+                    (v.current_biome.is_of(v.end_biome)) ? {
+                        v.biome_type = 'end';
+                    };
+                });
+
+                v.mushroom_biomes = q.array('minecraft:mushroom_fields', 'minecraft:mushroom_field_shore');
+                for_each(v.mushroom_biome, v.mushroom_biomes, {
+                    (v.current_biome.is_of(v.mushroom_biome)) ? {
+                        v.biome_type = 'mushroom';
+                    };
+                });
+
+                (v.biome_type == 'unknown') ? {
+                    v.biome_type = 'grassland';
+                };
+                
+                v.player.tell('§7Debug: Detected biome = ' + v.current_biome + ', biome_type = ' + v.biome_type);
+
+                v.biome_type == 'forest' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_forest');
+                } : v.biome_type == 'mountain' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_mountain');
+                } : v.biome_type == 'water' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_water');
+                } : v.biome_type == 'desert' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_desert');
+                } : v.biome_type == 'ice' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_ice');
+                } : v.biome_type == 'savanna' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_savanna');
+                } : v.biome_type == 'underground' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_underground');
+                } : v.biome_type == 'nether' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_nether');
+                } : v.biome_type == 'end' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_end');
+                } : v.biome_type == 'mushroom' ? {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_mushroom');
+                } : {
+                    v.selected_pokemon = q.run_script('cobblemon:pokemon_pools_grassland');
+                };
+
+                t.pokemon_level = math.floor(math.random(5, 56));
+                
+                t.pokemon_props = v.selected_pokemon + ' lvl=' + t.pokemon_level;
+                
+                t.spawn_x = v.npc.x;
+                t.spawn_y = v.npc.y;
+                t.spawn_z = v.npc.z;
+                
+                v.spawned_pokemon = v.player.world.spawn_pokemon(t.spawn_x, t.spawn_y, t.spawn_z, t.pokemon_props);
+                
+                v.battle_started = v.spawned_pokemon.attempt_wild_battle(v.player);
+                
+                v.battle_started ? {
+                    v.wild_pokemon = v.spawned_pokemon;
+
+                    q.run_molang('v.player.in_battle == false ? v.wild_pokemon.damage(1000);', 5.0);
+
+                    v.player.tell('§eA wild ' + v.selected_pokemon + ' appeared from the rustling spot! §7(Biome: ' + v.biome_type + ')');
+
+                    v.npc.damage(1000);
+                } : {
+                    v.spawned_pokemon.damage(1000);
+                };  
+            };
+        };
+    };
+});

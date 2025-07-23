@@ -1,0 +1,34 @@
+{
+  "resourceIdentifier": "cobblemon:rustling_spot",
+  "names": [
+    "RS"
+  ],
+  "presets": [],
+  "interaction": {
+    "type": "script", 
+    "script": "cobblemon:rustling_spot"
+  },
+  "canDespawn": true,
+  "battleConfiguration": {
+    "canChallenge": false
+  },
+  "isMovable": false,  
+  "isLeashable": false,
+  "allowProjectileHits": false,
+  "isInvulnerable": false,
+  "hideNameTag": true,
+  "ai": [
+    {
+      "type": "add_tasks_to_activity",
+      "activity": "minecraft:idle",
+      "tasksByPriority": {
+        "0": [
+          {
+            "type": "run_script",
+            "script": "cobblemon:rustling_spot"
+          }
+        ]
+      }
+    }
+  ]
+}

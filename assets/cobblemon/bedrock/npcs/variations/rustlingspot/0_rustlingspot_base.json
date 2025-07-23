@@ -1,0 +1,12 @@
+{
+  "name": "cobblemon:rustling_spot",
+  "order": 0,
+  "variations": [
+    {
+      "aspects": [],
+      "poser": "cobblemon:rustlingspot",
+      "model": "cobblemon:emitter.geo",
+      "layers": []
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "portraitScale": 1,
+  "portraitTranslation": [0, 0, 0],
+  "profileScale": 1,
+  "profileTranslation": [0, 0, 0],
+  "poses": {
+    "standing": {
+      "poseName": "standing",
+      "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
+      "animations": [
+        {
+          "condition": "!q.is_standing_on_blocks(1, 'minecraft:grass_block', 'minecraft:sand', 'minecraft:red_sand', 'minecraft:basalt', 'minecraft:blackstone', 'minecraft:calcite', 'minecraft:clay', 'minecraft:coarse_dirt', 'minecraft:cobblestone', 'minecraft:deepslate', 'minecraft:dirt', 'minecraft:dripstone_block', 'minecraft:end_stone', 'minecraft:gravel', 'minecraft:leaves', 'minecraft:moss_block', 'minecraft:mud', 'minecraft:mycelium', 'minecraft:netherrack', 'minecraft:podzol', 'minecraft:powder_snow', 'minecraft:rooted_dirt', 'minecraft:sculk', 'minecraft:snow_block', 'minecraft:soul_sand', 'minecraft:stone', 'minecraft:tuff')",
+          "animation": "q.bedrock('rustling_spot', 'blank')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:grass_block')",
+          "animation": "q.bedrock('rustling_spot', 'grass');"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:sand')",
+          "animation": "q.bedrock('rustling_spot', 'sand')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:red_sand')",
+          "animation": "q.bedrock('rustling_spot', 'red_sand')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:basalt')",
+          "animation": "q.bedrock('rustling_spot', 'basalt')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:blackstone')",
+          "animation": "q.bedrock('rustling_spot', 'blackstone')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:calcite')",
+          "animation": "q.bedrock('rustling_spot', 'calcite')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:clay')",
+          "animation": "q.bedrock('rustling_spot', 'clay')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:coarse_dirt')",
+          "animation": "q.bedrock('rustling_spot', 'coarse_dirt')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:cobblestone')",
+          "animation": "q.bedrock('rustling_spot', 'cobblestone')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:deepslate')",
+          "animation": "q.bedrock('rustling_spot', 'deepslate')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:dirt')",
+          "animation": "q.bedrock('rustling_spot', 'dirt')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:dripstone_block')",
+          "animation": "q.bedrock('rustling_spot', 'dripstone')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:end_stone')",
+          "animation": "q.bedrock('rustling_spot', 'end_stone')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:gravel')",
+          "animation": "q.bedrock('rustling_spot', 'gravel')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:leaves')",
+          "animation": "q.bedrock('rustling_spot', 'leaves')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:moss_block')",
+          "animation": "q.bedrock('rustling_spot', 'moss_block')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:mud')",
+          "animation": "q.bedrock('rustling_spot', 'mud')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:mycelium')",
+          "animation": "q.bedrock('rustling_spot', 'mycelium')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:netherrack')",
+          "animation": "q.bedrock('rustling_spot', 'netherrack')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:podzol')",
+          "animation": "q.bedrock('rustling_spot', 'podzol')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:powder_snow')",
+          "animation": "q.bedrock('rustling_spot', 'powder_snow')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:rooted_dirt')",
+          "animation": "q.bedrock('rustling_spot', 'rooted_dirt')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:sculk')",
+          "animation": "q.bedrock('rustling_spot', 'sculk')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:snow_block')",
+          "animation": "q.bedrock('rustling_spot', 'snow')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:soul_sand')",
+          "animation": "q.bedrock('rustling_spot', 'soul_sand')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:stone')",
+          "animation": "q.bedrock('rustling_spot', 'stone')"
+        },
+        {
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:tuff')",
+          "animation": "q.bedrock('rustling_spot', 'tuff')"
+        }
+        
+      ]
+    }
+  }
+}

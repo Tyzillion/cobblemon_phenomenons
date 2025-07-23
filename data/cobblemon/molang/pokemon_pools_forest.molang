@@ -1,0 +1,27 @@
+'Forest biome Pokemon pool - weighted random selection';
+'Total weight: 50 (Common: 5, Uncommon: 3, Rare: 1)';
+t.random_weight = math.random_integer(1, 50);
+
+'Forest Pokemon options with weights';
+'Common Pokemon (weight 5 each)';
+(t.random_weight >= 1 && t.random_weight <= 5) ? (t.pokemon = 'pidgey');
+(t.random_weight >= 6 && t.random_weight <= 10) ? (t.pokemon = 'rattata');
+(t.random_weight >= 11 && t.random_weight <= 15) ? (t.pokemon = 'caterpie');
+(t.random_weight >= 16 && t.random_weight <= 20) ? (t.pokemon = 'weedle');
+(t.random_weight >= 21 && t.random_weight <= 25) ? (t.pokemon = 'oddish');
+
+'Uncommon Pokemon (weight 3 each)';
+(t.random_weight >= 26 && t.random_weight <= 28) ? (t.pokemon = 'spearow');
+(t.random_weight >= 29 && t.random_weight <= 31) ? (t.pokemon = 'ekans');
+(t.random_weight >= 32 && t.random_weight <= 34) ? (t.pokemon = 'nidoranm');
+(t.random_weight >= 35 && t.random_weight <= 37) ? (t.pokemon = 'paras');
+(t.random_weight >= 38 && t.random_weight <= 40) ? (t.pokemon = 'venonat');
+(t.random_weight >= 41 && t.random_weight <= 43) ? (t.pokemon = 'mankey');
+(t.random_weight >= 44 && t.random_weight <= 46) ? (t.pokemon = 'bellsprout');
+
+'Rare Pokemon (weight 1 each)';
+(t.random_weight == 47) ? (t.pokemon = 'pikachu');
+(t.random_weight == 48) ? (t.pokemon = 'scyther');
+
+'Return the selected Pokemon';
+return t.pokemon;

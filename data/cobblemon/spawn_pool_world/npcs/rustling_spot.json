@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "rustling_spot",
+      "npc": "rustlingspot",
+      "presets": ["natural"],
+      "type": "npc",
+      "context": "grounded",
+      "bucket": "common",
+      "weight": 50,
+      "level": "1",
+      "condition": {
+        "biomes": ["#cobblemon:is_overworld"]
+      }
+    }
+  ]
+}

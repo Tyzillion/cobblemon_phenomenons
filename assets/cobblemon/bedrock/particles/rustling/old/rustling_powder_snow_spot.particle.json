@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "cobblemon:rustling_powdered_snow_spot",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particles/minecraft_blocks"
+			}
+		},
+		"events": {
+			"event_sound": {
+				"sound_effect": {
+					"event_name": "minecraft:block.powder_snow.hit"
+				}
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 35,
+				"max_particles": 140
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 0.75
+			},
+			"minecraft:emitter_lifetime_events": {
+				"creation_event": "event_sound"
+			},
+			"minecraft:emitter_shape_disc": {
+				"offset": [0, 0.1, 0],
+				"radius": 0.7,
+				"direction": ["math.random(-0.4,0.4)", "math.random(0,1.2)", "math.random(-0.4,0.4)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 1.5
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random_integer(1,4) * 90"
+			},
+			"minecraft:particle_initial_speed": 1.2,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, -2.5, 0]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [0.025, 0.025],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 560,
+					"texture_height": 512,
+					"uv": ["304 + math.floor(v.particle_random_3*16)*1", "384 + math.floor(v.particle_random_3*16)*1"],
+					"uv_size": [1, 1]
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_drag": 1.2,
+				"collision_radius": 0.01
+			},
+			"minecraft:particle_appearance_lighting": {}
+		}
+	}
+}
