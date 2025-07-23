@@ -5,14 +5,7 @@
 			"identifier": "cobblemon:rustling_spot_unknown",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
-				"texture": "textures/particles/glowingsparkle"
-			}
-		},
-		"events": {
-			"event_sound": {
-				"sound_effect": {
-					"event_name": "minecraft:entity.breeze.land"
-				}
+				"texture": "textures/particles/generic/sparkle/glowingsparkle"
 			}
 		},
 		"components": {
@@ -22,9 +15,6 @@
 			},
 			"minecraft:emitter_lifetime_looping": {
 				"active_time": 0.75
-			},
-			"minecraft:emitter_lifetime_events": {
-				"creation_event": "event_sound"
 			},
 			"minecraft:emitter_shape_sphere": {
 				"offset": [0, 0.5, 0],

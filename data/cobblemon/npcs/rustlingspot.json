@@ -20,6 +20,16 @@
   "ai": [
     {
       "type": "add_tasks_to_activity",
+      "activity": "core",
+      "tasksByPriority": {
+        "0": [ {
+          "type": "stay_afloat",
+          "chance": "1"
+        } ]
+      }
+    },
+    {
+      "type": "add_tasks_to_activity",
       "activity": "minecraft:idle",
       "tasksByPriority": {
         "0": [

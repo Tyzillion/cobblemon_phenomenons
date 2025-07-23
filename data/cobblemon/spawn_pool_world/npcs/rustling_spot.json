@@ -2,17 +2,26 @@
   "enabled": true,
   "spawns": [
     {
-      "id": "rustling_spot",
+      "id": "rustling_spot1",
       "npc": "rustlingspot",
-      "presets": ["natural"],
+      "presets": ["natural", "ancient_city", "foliage", "urban"],
       "type": "npc",
       "context": "grounded",
       "bucket": "common",
       "weight": 50,
       "level": "1",
-      "condition": {
-        "biomes": ["#cobblemon:is_overworld"]
-      }
+      "condition": {}
+    },
+    {
+      "id": "rustling_spot",
+      "npc": "rustlingspot",
+      "presets": ["water"],
+      "type": "npc",
+      "context": "surface",
+      "bucket": "common",
+      "weight": 50,
+      "level": "1",
+      "condition": {}
     }
   ]
 }

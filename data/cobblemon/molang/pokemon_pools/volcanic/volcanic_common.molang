@@ -1,0 +1,7 @@
+q.array(
+    'charmander', 
+    'growlithe', 
+    'ponyta', 
+    'magmar', 
+    'torchic'
+);

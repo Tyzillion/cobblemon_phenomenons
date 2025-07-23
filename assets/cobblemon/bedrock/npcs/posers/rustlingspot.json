@@ -14,7 +14,7 @@
         },
         {
           "condition": "q.is_standing_on_blocks(1, 'minecraft:grass_block')",
-          "animation": "q.bedrock('rustling_spot', 'grass');"
+          "animation": "q.bedrock('rustling_spot', 'grass')"
         },
         {
           "condition": "q.is_standing_on_blocks(1, 'minecraft:sand')",
@@ -120,7 +120,6 @@
           "condition": "q.is_standing_on_blocks(1, 'minecraft:tuff')",
           "animation": "q.bedrock('rustling_spot', 'tuff')"
         }
-        
       ]
     }
   }

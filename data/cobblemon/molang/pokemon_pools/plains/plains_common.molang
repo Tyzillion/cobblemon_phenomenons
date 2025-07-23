@@ -1,0 +1,9 @@
+q.array(
+    'pidgey', 
+    'rattata', 
+    'spearow', 
+    'meowth',
+    'psyduck',
+    'ponyta',
+    'farfetchd'
+);

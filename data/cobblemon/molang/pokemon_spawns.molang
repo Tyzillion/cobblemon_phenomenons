@@ -1,0 +1,55 @@
+v.common_pokemon = q.run_script('cobblemon:' + v.biome_type + '_common');
+v.uncommon_pokemon = q.run_script('cobblemon:' + v.biome_type + '_uncommon');
+v.rare_pokemon = q.run_script('cobblemon:' + v.biome_type + '_rare');
+
+t.common_count = 0;
+for_each(t.current_pokemon, v.common_pokemon, {
+    t.common_count = t.common_count + 1;
+});
+
+t.uncommon_count = 0;
+for_each(t.current_pokemon, v.uncommon_pokemon, {
+    t.uncommon_count = t.uncommon_count + 1;
+});
+
+t.rare_count = 0;
+for_each(t.current_pokemon, v.rare_pokemon, {
+    t.rare_count = t.rare_count + 1;
+});
+
+t.total_weight = (t.common_count * 5) + (t.uncommon_count * 3) + (t.rare_count * 1);
+
+t.random_weight = math.random_integer(1, t.total_weight);
+
+v.pokemon = 'undefined';
+
+t.current_weight = 0;
+
+for_each(t.current_pokemon, v.common_pokemon, {
+    t.weight_start = t.current_weight + 1;
+    t.weight_end = t.current_weight + 5;
+    (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
+        v.pokemon = t.current_pokemon;
+    };
+    t.current_weight = t.current_weight + 5;
+});
+
+for_each(t.current_pokemon, v.uncommon_pokemon, {
+    t.weight_start = t.current_weight + 1;
+    t.weight_end = t.current_weight + 3;
+    (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
+        v.pokemon = t.current_pokemon;
+    };
+    t.current_weight = t.current_weight + 3;
+});
+
+for_each(t.current_pokemon, v.rare_pokemon, {
+    t.weight_start = t.current_weight + 1;
+    t.weight_end = t.current_weight + 1;
+    (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
+        v.pokemon = t.current_pokemon;
+    };
+    t.current_weight = t.current_weight + 1;
+});
+
+return v.pokemon;
