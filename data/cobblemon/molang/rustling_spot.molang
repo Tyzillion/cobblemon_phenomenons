@@ -1,3 +1,4 @@
+
 v.npc = q.entity;
 t.detection_radius = 4.0;
 
@@ -13,105 +14,20 @@ for_each(v.player, t.nearby_entities, {
                 v.player.set_npc_variable(v.npc, 'rustling_cooldown', t.cooldown_time);
                 v.player.save_data();
                 t.current_biome = v.npc.biome;
-                v.biome_type = 'unknown';
+                v.biome_type = 'plains';
 
-                t.forest_biomes = q.array('minecraft:forest', 'minecraft:birch_forest', 'minecraft:dark_forest', 
-                 'minecraft:taiga', 'minecraft:old_growth_birch_forest', 'minecraft:old_growth_pine_taiga',
-                 'minecraft:old_growth_spruce_taiga', 'minecraft:jungle', 'minecraft:sparse_jungle',
-                 'minecraft:bamboo_jungle', 'minecraft:cherry_grove');
+                t.biome_list = q.array('end', 'deep_dark', 'cave', 'dripstone', 'frozen_ocean', 'cold_ocean', 'deep_ocean', 'warm_ocean', 'lukewarm_ocean', 'ocean', 'snowy_forest', 'cherry_blossom', 'bamboo', 'forest', 'badlands', 'desert', 'taiga', 'tundra', 'peak', 'highlands', 'hills', 'plateau', 'mountain', 'lush', 'jungle', 'river', 'beach', 'coast', 'island', 'swamp', 'savanna', 'shrubland', 'mushroom', 'spooky', 'magical', 'sky_islands', 'volcanic', 'thermal', 'floral', 'plains');
 
-                for_each(t.forest_biome, t.forest_biomes, {
-                    (t.current_biome.is_of(t.forest_biome)) ? {
-                        v.biome_type = 'forest';
-                    };
+                for_each(t.biome, t.biome_list, {
+                    t.current_biome.is_in('#cobblemon:is_' + t.biome) ? (v.biome_type = t.biome);
                 });
 
-                t.water_biomes = q.array('minecraft:ocean', 'minecraft:deep_ocean', 'minecraft:lukewarm_ocean',
-                 'minecraft:warm_ocean', 'minecraft:cold_ocean',
-                 'minecraft:river', 'minecraft:frozen_river', 'minecraft:beach', 'minecraft:stony_shore',
-                 'minecraft:swamp', 'minecraft:mangrove_swamp');
-
-                for_each(t.water_biome, t.water_biomes, {
-                    (t.current_biome.is_of(t.water_biome)) ? {
-                        v.biome_type = 'water';
-                    };
-                });
-
-                t.mountain_biomes = q.array('minecraft:mountains', 'minecraft:mountain_edge', 'minecraft:snowy_mountains',
-                 'minecraft:gravelly_mountains', 'minecraft:modified_gravelly_mountains',
-                 'minecraft:extreme_hills', 'minecraft:stony_peaks', 'minecraft:jagged_peaks',
-                 'minecraft:windswept_hills', 'minecraft:windswept_forest', 'minecraft:windswept_gravelly_hills');
-                for_each(t.mountain_biome, t.mountain_biomes, {
-                    (t.current_biome.is_of(t.mountain_biome)) ? {
-                        v.biome_type = 'mountain';
-                    };
-                });
-
-                t.desert_biomes = q.array('minecraft:desert', 'minecraft:badlands', 'minecraft:wooded_badlands',
-                 'minecraft:eroded_badlands', 'minecraft:modified_badlands_plateau',
-                 'minecraft:modified_wooded_badlands_plateau');
-                for_each(t.desert_biome, t.desert_biomes, {
-                    (t.current_biome.is_of(t.desert_biome)) ? {
-                        v.biome_type = 'desert';
-                    };
-                });
-
-                t.ice_biomes = q.array('minecraft:ice_spikes', 'minecraft:snowy_tundra', 'minecraft:snowy_taiga',
-                 'minecraft:snowy_beach', 'minecraft:frozen_peaks', 'minecraft:snowy_slopes',
-                 'minecraft:grove', 'minecraft:snowy_plains', 'minecraft:frozen_ocean');
-                for_each(t.ice_biome, t.ice_biomes, {
-                    (t.current_biome.is_of(t.ice_biome)) ? {
-                        v.biome_type = 'ice';
-                    };
-                });
-
-                t.savanna_biomes = q.array('minecraft:savanna', 'minecraft:savanna_plateau', 'minecraft:windswept_savanna',
-                 'minecraft:shattered_savanna', 'minecraft:shattered_savanna_plateau');
-                for_each(t.savanna_biome, t.savanna_biomes, {
-                    (t.current_biome.is_of(t.savanna_biome)) ? {
-                        v.biome_type = 'savanna';
-                    };
-                });
-
-                t.underground_biomes = q.array('minecraft:deep_dark', 'minecraft:dripstone_caves', 'minecraft:lush_caves');
-                for_each(t.underground_biome, t.underground_biomes, {
-                    (t.current_biome.is_of(t.underground_biome)) ? {
-                        v.biome_type = 'underground';
-                    };
-                });
-
-                t.nether_biomes = q.array('minecraft:nether_wastes', 'minecraft:crimson_forest', 'minecraft:warped_forest',
-                 'minecraft:soul_sand_valley', 'minecraft:basalt_deltas');
-                for_each(t.nether_biome, t.nether_biomes, {
-                    (t.current_biome.is_of(t.nether_biome)) ? {
-                        v.biome_type = 'nether';
-                    };
-                });
-
-                t.end_biomes = q.array('minecraft:the_end', 'minecraft:end_highlands', 'minecraft:end_midlands',
-                 'minecraft:small_end_islands', 'minecraft:end_barrens');
-                for_each(t.end_biome, t.end_biomes, {
-                    (t.current_biome.is_of(t.end_biome)) ? {
-                        v.biome_type = 'end';
-                    };
-                });
-
-                t.mushroom_biomes = q.array('minecraft:mushroom_fields', 'minecraft:mushroom_field_shore');
-                for_each(t.mushroom_biome, t.mushroom_biomes, {
-                    (t.current_biome.is_of(t.mushroom_biome)) ? {
-                        v.biome_type = 'mushroom';
-                    };
-                });
-
-                (v.biome_type == 'unknown') ? {
-                    v.biome_type = 'grassland';
-                };
-                
                 v.player.tell('§7Debug: Detected biome = ' + t.current_biome + ', biome_type = ' + v.biome_type);
 
                 v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns');
 
-                t.pokemon_level = math.floor(math.random(5, v.player.party.average_level));
+                t.pokemon_level = math.random_integer(5, v.player.party.average_level);
+                (t.pokemon_level <= 5) ? (t.pokemon_level = 35);
                 
                 t.pokemon_props = v.selected_pokemon + ' lvl=' + t.pokemon_level;
                 

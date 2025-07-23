@@ -1,4 +1,0 @@
-v.pool_pokemon = q.array(
-    'abra'
-);
-return v.pool_pokemon;

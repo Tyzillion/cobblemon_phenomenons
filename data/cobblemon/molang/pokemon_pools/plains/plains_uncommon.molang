@@ -1,0 +1,10 @@
+q.array(
+    'pidgeotto', 
+    'raticate', 
+    'fearow', 
+    'persian',
+    'golduck',
+    'rapidash',
+    'doduo',
+    'tauros'
+);

@@ -1,0 +1,7 @@
+q.array(
+    'psyduck', 
+    'goldeen', 
+    'magikarp', 
+    'poliwag', 
+    'slowpoke'
+);

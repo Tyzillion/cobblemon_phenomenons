@@ -1,0 +1,9 @@
+q.array(
+    'oddish', 
+    'bellsprout', 
+    'gloom', 
+    'weepinbell',
+    'bulbasaur',
+    'caterpie',
+    'weedle'
+);
