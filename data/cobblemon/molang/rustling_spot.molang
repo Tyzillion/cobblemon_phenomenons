@@ -1,4 +1,3 @@
-
 v.npc = q.entity;
 t.detection_radius = 4.0;
 
@@ -6,10 +5,11 @@ t.nearby_entities = v.npc.get_nearby_entities(t.detection_radius);
 
 for_each(v.player, t.nearby_entities, {
 
-    (v.player.is_player && !v.player.in_battle) ? {
+    (v.player.is_player) ? {
+        v.kocatch_combo = v.player.data.kocatch_combo;
         
-        v.player.world.game_time > v.player.get_npc_variable(v.npc, 'rustling_cooldown') ? {
-            {
+        (!v.player.in_battle) ? {
+            v.player.world.game_time > v.player.get_npc_variable(v.npc, 'rustling_cooldown') ? {
                 t.cooldown_time = v.player.world.game_time + 100;
                 v.player.set_npc_variable(v.npc, 'rustling_cooldown', t.cooldown_time);
                 v.player.save_data();
@@ -22,35 +22,69 @@ for_each(v.player, t.nearby_entities, {
                     t.current_biome.is_in('#cobblemon:is_' + t.biome) ? (v.biome_type = t.biome);
                 });
 
-                v.player.tell('§7Debug: Detected biome = ' + t.current_biome + ', biome_type = ' + v.biome_type);
-
+                v.combo_bonus = 0;
+                (v.kocatch_combo >= 5) ? (v.combo_bonus = 1);
+                (v.kocatch_combo >= 10) ? (v.combo_bonus = 2);
+                (v.kocatch_combo >= 20) ? (v.combo_bonus = 3);
+                
                 v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns');
 
-                t.pokemon_level = math.random_integer(5, v.player.party.average_level);
+                t.pokemon_level = math.random_integer(5, (v.player.party.average_level / 2));
                 (t.pokemon_level <= 5) ? (t.pokemon_level = 35);
+                
+                t.level_bonus = 0;
+                (v.kocatch_combo >= 10) ? (t.level_bonus = 2);
+                (v.kocatch_combo >= 20) ? (t.level_bonus = 5);
+                (v.kocatch_combo >= 50) ? (t.level_bonus = 10);
+                t.pokemon_level = t.pokemon_level + t.level_bonus;
                 
                 t.pokemon_props = v.selected_pokemon + ' lvl=' + t.pokemon_level;
                 
-                t.spawn_x = v.npc.x;
-                t.spawn_y = v.npc.y;
-                t.spawn_z = v.npc.z;
+                (v.kocatch_combo >= 30) ? {
+                    t.shiny_chance = math.random_integer(1, 100);
+                    (t.shiny_chance <= 2) ? {
+                        t.pokemon_props = t.pokemon_props + ' s';
+                        v.player.tell('§d✨ Combo bonus activated shiny chance! ✨');
+                    };
+                };
                 
-                v.spawned_pokemon = v.player.world.spawn_pokemon(t.spawn_x, t.spawn_y, t.spawn_z, t.pokemon_props);
+                v.spawned_pokemon = v.player.world.spawn_pokemon(v.npc.x, v.npc.y, v.npc.z, t.pokemon_props);
+                
+                (v.spawned_pokemon.is_shiny) ? {
+                    q.run_command('runmolangscript cobblemon:rustling_shiny_encounter ' + v.player.username);
+                };
+                
+                (v.kocatch_combo >= 50) ? {
+                    v.spawned_pokemon.add_marks_with_chance('cobblemon:uncommon', 0.2, 'cobblemon:rare', 0.1);
+                    v.player.tell('§b§lCombo Bonus! §7This Pokemon has a chance for special marks!');
+                } : {
+                    (v.kocatch_combo >= 20) ? {
+                        v.spawned_pokemon.add_marks_with_chance('cobblemon:uncommon', 0.1, 'cobblemon:rare', 0.05);
+                        v.player.tell('§6§lCombo Bonus! §7This Pokemon has a chance for special marks!');
+                    };
+                };
                 
                 v.battle_started = v.spawned_pokemon.attempt_wild_battle(v.player);
                 
                 v.battle_started ? {
                     v.wild_pokemon = v.spawned_pokemon;
 
-                    v.wild_pokemon.run_molang_after('q.run_script(\'cobblemon:flee_animation\')', 2.0);
+                    v.player.in_battle == false && !v.wild_pokemon.is_shiny ? {
+                        v.wild_pokemon.run_molang_after('q.run_script(\'cobblemon:flee_animation\')', 2.0);
+                    };
 
-                    v.player.tell('§eA wild MOTHERFUCKING ' + v.selected_pokemon + ' appeared from the rustling spot! §7(Biome: ' + v.biome_type + ')');
+                    q.run_command('runmolangscript cobblemon:rustling_combo_check ' + v.player.username);
+
+                    (v.kocatch_combo == 0) ? {
+                        v.player.tell('§7Start your combo by catching or defeating this Pokemon!');
+                    };
+                    
                     q.run_command('tp ' + v.npc.uuid + ' ' + v.npc.x + ' ' + (v.npc.y - 360) + ' ' + v.npc.z);
                     v.npc.damage(1000);
                 } : {
                     v.spawned_pokemon.damage(1000);
                 };  
             };
-        };
+        }
     };
 });

@@ -1,0 +1,31 @@
+t.playercombo = q.player;
+v.current_combo = t.playercombo.data.kocatch_combo;
+
+v.new_combo = v.current_combo + 1;
+t.playercombo.data.kocatch_combo = v.new_combo;
+t.playercombo.save_data();
+
+(v.new_combo == 5) ? {
+    t.playercombo.tell('§a§lRustling Combo x5!', true);
+    t.playercombo.tell('§7Bonus: Slightly increased rare Pokemon chances');
+};
+(v.new_combo == 10) ? {
+    t.playercombo.tell('§6§lRustling Combo x10!', true);
+    t.playercombo.tell('§7Bonus: Moderately increased rare Pokemon chances + 2 bonus levels');
+};
+(v.new_combo == 20) ? {
+    t.playercombo.tell('§c§lRustling Combo x20!', true);
+    t.playercombo.tell('§7Bonus: Significantly increased rare Pokemon chances + 5 bonus levels');
+};
+(v.new_combo == 30) ? {
+    t.playercombo.tell('§d§lRustling Combo x30! §7Shiny hunter mode activated!', true);
+    t.playercombo.tell('§7Bonus: 2% shiny chance boost added!', true);
+};
+(v.new_combo == 50) ? {
+    t.playercombo.tell('§5§lRustling Combo x50!', true);
+    t.playercombo.tell('§7Bonus: Maximum rare Pokemon chances + 10 bonus levels + special Mark chance!', true);
+};
+
+(v.new_combo != 5 && v.new_combo != 10 && v.new_combo != 20 && v.new_combo != 30 && v.new_combo != 50) ? {
+    t.playercombo.tell('§a§l+1 Rustling Combo! §7Total: ' + v.new_combo, true);
+};

@@ -1,0 +1,11 @@
+t.playercombo = q.player;
+v.current_combo = t.playercombo.data.kocatch_combo;
+
+(v.current_combo > 0) ? {
+    t.playercombo.tell('§c§l-Combo Broken! §7Your combo was reset. Previous combo: ' + v.current_combo);
+    t.playercombo.tell('§7Reason: You fled from battle!');
+    t.playercombo.data.kocatch_combo = 0;
+    t.playercombo.save_data();
+} : {
+    t.playercombo.tell('§7No active combo to break.');
+};

@@ -1,0 +1,44 @@
+t.playercombo = q.player;
+v.current_combo = t.playercombo.data.kocatch_combo;
+
+t.playercombo.tell('§6=== Rustling Spot Combo Status ===');
+t.playercombo.tell('§7Current Combo: §a' + v.current_combo);
+
+(v.current_combo >= 5) ? {
+    t.playercombo.tell('§a✓ Combo Bonus Level 1: Slightly increased rare Pokemon chances');
+};
+(v.current_combo >= 10) ? {
+    t.playercombo.tell('§6✓ Combo Bonus Level 2: Moderately increased rare Pokemon chances + 2 bonus levels');
+};
+(v.current_combo >= 20) ? {
+    t.playercombo.tell('§c✓ Combo Bonus Level 3: Significantly increased rare Pokemon chances + 5 bonus levels + 25% more EXP');
+};
+(v.current_combo >= 30) ? {
+    t.playercombo.tell('§d✓ Combo Bonus Level 4: 2% shiny chance boost');
+};
+(v.current_combo >= 50) ? {
+    t.playercombo.tell('§5✓ Combo Bonus Level 5: Maximum rare Pokemon chances + 10 bonus levels + 50% more EXP');
+};
+
+(v.current_combo < 5) ? {
+    t.playercombo.tell('§7Next milestone: §e5 §7(Level 1 bonus)');
+};
+(v.current_combo >= 5 && v.current_combo < 10) ? {
+    t.playercombo.tell('§7Next milestone: §e10 §7(Level 2 bonus + level boost)');
+};
+(v.current_combo >= 10 && v.current_combo < 20) ? {
+    t.playercombo.tell('§7Next milestone: §e20 §7(Level 3 bonus + higher level boost)');
+};
+(v.current_combo >= 20 && v.current_combo < 30) ? {
+    t.playercombo.tell('§7Next milestone: §e30 §7(Shiny chance boost)');
+};
+(v.current_combo >= 30 && v.current_combo < 50) ? {
+    t.playercombo.tell('§7Next milestone: §e50 §7(Maximum bonuses + Mark)');
+};
+(v.current_combo >= 50) ? {
+    t.playercombo.tell('§d§lMAX COMBO ACHIEVED! §7You are a rustling spot master!');
+};
+
+t.playercombo.tell('§7Tip: Your combo increases by catching OR defeating Pokemon from rustling spots.');
+t.playercombo.tell('§c§lWarning: §7Your combo resets if you flee from battle or encounter a shiny!');
+t.playercombo.tell('§6===================================');
