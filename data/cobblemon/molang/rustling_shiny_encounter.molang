@@ -9,5 +9,5 @@ v.current_combo = t.playercombo.data.kocatch_combo;
     t.playercombo.data.kocatch_combo = 0;
     t.playercombo.save_data();
 } : {
-    t.playercombo.tell('§d§l✨ SHINY POKEMON! ✨ §7What a lucky find!');
+    t.playercombo.tell('§d§l✨ SHINY POKEMON! ✨ §7What a lucky find!', true);
 };

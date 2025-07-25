@@ -16,7 +16,48 @@ for_each(v.player, t.nearby_entities, {
                 t.current_biome = v.npc.biome;
                 v.biome_type = 'plains';
 
-                t.biome_list = q.array('end', 'deep_dark', 'cave', 'dripstone', 'frozen_ocean', 'cold_ocean', 'deep_ocean', 'warm_ocean', 'lukewarm_ocean', 'ocean', 'snowy_forest', 'cherry_blossom', 'bamboo', 'forest', 'badlands', 'desert', 'taiga', 'tundra', 'peak', 'highlands', 'hills', 'plateau', 'mountain', 'lush', 'jungle', 'river', 'beach', 'coast', 'island', 'swamp', 'savanna', 'shrubland', 'mushroom', 'spooky', 'magical', 'sky_islands', 'volcanic', 'thermal', 'floral', 'plains');
+                t.biome_list = q.array(
+                    'end', 
+                    'deep_dark', 
+                    'cave', 
+                    'dripstone', 
+                    'frozen_ocean', 
+                    'cold_ocean', 
+                    'deep_ocean',
+                    'warm_ocean',
+                    'lukewarm_ocean',
+                    'ocean',
+                    'snowy_forest',
+                    'cherry_blossom',
+                    'bamboo',
+                    'forest',
+                    'badlands',
+                    'desert',
+                    'taiga',
+                    'tundra',
+                    'peak',
+                    'highlands',
+                    'hills',
+                    'plateau',
+                    'mountain',
+                    'lush',
+                    'jungle',
+                    'river',
+                    'beach',
+                    'coast',
+                    'island',
+                    'swamp',
+                    'savanna',
+                    'shrubland',
+                    'mushroom',
+                    'spooky',
+                    'magical',
+                    'sky_islands',
+                    'volcanic',
+                    'thermal',
+                    'floral',
+                    'plains'
+                );
 
                 for_each(t.biome, t.biome_list, {
                     t.current_biome.is_in('#cobblemon:is_' + t.biome) ? (v.biome_type = t.biome);
@@ -69,11 +110,11 @@ for_each(v.player, t.nearby_entities, {
                 v.battle_started ? {
                     v.wild_pokemon = v.spawned_pokemon;
 
-                    v.player.in_battle == false && !v.wild_pokemon.is_shiny ? {
-                        v.wild_pokemon.run_molang_after('q.run_script(\'cobblemon:flee_animation\')', 2.0);
-                    };
-
                     q.run_command('runmolangscript cobblemon:rustling_combo_check ' + v.player.username);
+
+                    q.run_command('bedrockparticle cobblemon:pokemon_appear ' + v.spawned_pokemon.uuid + ' middle');
+
+                    v.wild_pokemon.run_molang_after('q.run_script(\'cobblemon:flee_animation\')', 2.0);
 
                     (v.kocatch_combo == 0) ? {
                         v.player.tell('§7Start your combo by catching or defeating this Pokemon!');

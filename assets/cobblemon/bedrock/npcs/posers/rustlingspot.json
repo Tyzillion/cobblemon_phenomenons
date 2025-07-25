@@ -9,23 +9,23 @@
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         {
-          "condition": "!q.is_standing_on_blocks(1, 'minecraft:grass_block') && !q.is_standing_on_blocks(1, 'minecraft:dirt') && !q.is_standing_on_blocks(1, 'minecraft:sand') && !q.is_standing_on_blocks(1, 'minecraft:red_sand');",
+          "condition": "!q.is_standing_on_blocks(1, 'minecraft:suspicious_sand', 'minecraft:packed_mud', 'minecraft:grass_block', 'minecraft:sand', 'minecraft:red_sand', 'minecraft:dirt', 'minecraft:coarse_dirt', 'minecraft:podzol', 'minecraft:mycelium', 'minecraft:rooted_dirt', 'minecraft:mud', 'minecraft:moss_block', 'minecraft:muddy_mangrove_roots')",
           "animation": "q.bedrock('rustling_spot', 'blank')"
         },
         {
-          "condition": "q.is_standing_on_blocks(1, 'minecraft:grass_block')",
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:grass_block', 'minecraft:moss_block')",
           "animation": "q.bedrock('rustling_spot', 'grass')"
         },
         {
-          "condition": "q.is_standing_on_blocks(1, 'minecraft:dirt')",
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:dirt', 'minecraft:packed_mud', 'minecraft:coarse_dirt', 'minecraft:podzol', 'minecraft:mycelium', 'minecraft:rooted_dirt', 'minecraft:mud', 'minecraft:muddy_mangrove_roots')",
           "animation": "q.bedrock('rustling_spot', 'dirt')"
         },
         {
-          "condition": "q.is_standing_on_blocks(1, 'minecraft:sand')",
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:sand', 'minecraft:sandstone', 'minecraft:suspicious_sand')",
           "animation": "q.bedrock('rustling_spot', 'sand')"
         },
         {
-          "condition": "q.is_standing_on_blocks(1, 'minecraft:red_sand')",
+          "condition": "q.is_standing_on_blocks(1, 'minecraft:red_sand', 'minecraft:red_sandstone')",
           "animation": "q.bedrock('rustling_spot', 'red_sand')"
         }
       ]
