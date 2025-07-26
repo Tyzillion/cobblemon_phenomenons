@@ -67,44 +67,62 @@ for_each(v.player, t.nearby_entities, {
                 (v.kocatch_combo >= 5) ? (v.combo_bonus = 1);
                 (v.kocatch_combo >= 10) ? (v.combo_bonus = 2);
                 (v.kocatch_combo >= 20) ? (v.combo_bonus = 3);
-                
+
                 v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns');
 
-                t.pokemon_level = math.random_integer(5, (v.player.party.average_level / 2));
+                t.pokemon_level = math.random_integer(5, (v.player.party.average_level / 1.5));
                 (t.pokemon_level <= 5) ? (t.pokemon_level = 35);
                 
                 t.level_bonus = 0;
                 (v.kocatch_combo >= 10) ? (t.level_bonus = 2);
                 (v.kocatch_combo >= 20) ? (t.level_bonus = 5);
                 (v.kocatch_combo >= 50) ? (t.level_bonus = 10);
-                t.pokemon_level = t.pokemon_level + t.level_bonus;
+                t.pokemon_level = math.min(t.pokemon_level + t.level_bonus, 100);
                 
                 t.pokemon_props = v.selected_pokemon + ' lvl=' + t.pokemon_level;
-                
-                (v.kocatch_combo >= 30) ? {
-                    t.shiny_chance = math.random_integer(1, 100);
-                    (t.shiny_chance <= 2) ? {
-                        t.pokemon_props = t.pokemon_props + ' s';
-                        v.player.tell('§d✨ Combo bonus activated shiny chance! ✨');
+
+                (v.kocatch_combo >= 60) ? {
+                    t.ha_chance = math.random_integer(1, 100);
+                    (t.ha_chance <= 10) ? {
+                        t.pokemon_props = t.pokemon_props + ' ha';
+                        v.player.tell('§d✨ Combo bonus forced a hidden ability encounter!! ✨');
                     };
                 };
                 
+                (v.kocatch_combo >= 100) ? {
+                    t.shiny_chance = math.random_integer(1, 100);
+                    (t.shiny_chance <= 2) ? {
+                        t.pokemon_props = t.pokemon_props + ' s';
+                        v.player.tell('§d✨ Combo bonus forced a shiny encounter!! ✨');
+                    };
+                };
+
                 v.spawned_pokemon = v.player.world.spawn_pokemon(v.npc.x, v.npc.y, v.npc.z, t.pokemon_props);
+
+                v.spawned_pokemon.add_potential_marks('cobblemon:mark_phenomenon');
                 
                 (v.spawned_pokemon.is_shiny) ? {
                     q.run_command('runmolangscript cobblemon:rustling_shiny_encounter ' + v.player.username);
                 };
                 
                 (v.kocatch_combo >= 50) ? {
-                    v.spawned_pokemon.add_marks_with_chance('cobblemon:uncommon', 0.2, 'cobblemon:rare', 0.1);
-                    v.player.tell('§b§lCombo Bonus! §7This Pokemon has a chance for special marks!');
+                    math.random_integer(1,100) <= 10 ? {
+                        v.spawned_pokemon.add_marks('cobblemon:mark_phenomenon');
+                    };
+                    v.player.tell('§b§lCombo Bonus! §7This Pokemon has a decent chance for a special mark!', true);
                 } : {
                     (v.kocatch_combo >= 20) ? {
-                        v.spawned_pokemon.add_marks_with_chance('cobblemon:uncommon', 0.1, 'cobblemon:rare', 0.05);
-                        v.player.tell('§6§lCombo Bonus! §7This Pokemon has a chance for special marks!');
+                        math.random_integer(1,100) <= 5 ? {
+                            v.spawned_pokemon.add_marks('cobblemon:mark_phenomenon');
+                        };
+                        v.player.tell('§b§lCombo Bonus! §7This Pokemon has a good chance for a special mark!', true);
                     };
                 };
-                
+
+                v.player.tell('Rarity of Pokemon: ' + v.rarity);
+                v.player.tell('§7(Biome: ' + v.biome_type + ')');
+                v.player.tell('Pokemon: ' + v.selected_pokemon);
+
                 v.battle_started = v.spawned_pokemon.attempt_wild_battle(v.player);
                 
                 v.battle_started ? {

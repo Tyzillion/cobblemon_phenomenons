@@ -17,7 +17,27 @@ for_each(t.current_pokemon, v.rare_pokemon, {
     t.rare_count = t.rare_count + 1;
 });
 
-t.total_weight = (t.common_count * 5) + (t.uncommon_count * 3) + (t.rare_count * 1);
+t.common_weight = 5;
+t.uncommon_weight = 3;
+t.rare_weight = 1;
+
+(v.combo_bonus == 1) ? {
+    t.common_weight = 4;
+    t.uncommon_weight = 3;
+    t.rare_weight = 2;
+};
+(v.combo_bonus == 2) ? {
+    t.common_weight = 3;
+    t.uncommon_weight = 4;
+    t.rare_weight = 3;
+};
+(v.combo_bonus >= 3) ? {
+    t.common_weight = 2;
+    t.uncommon_weight = 5;
+    t.rare_weight = 4;
+};
+
+t.total_weight = (t.common_count * t.common_weight) + (t.uncommon_count * t.uncommon_weight) + (t.rare_count * t.rare_weight);
 
 t.random_weight = math.random_integer(1, t.total_weight);
 
@@ -27,29 +47,32 @@ t.current_weight = 0;
 
 for_each(t.current_pokemon, v.common_pokemon, {
     t.weight_start = t.current_weight + 1;
-    t.weight_end = t.current_weight + 5;
+    t.weight_end = t.current_weight + t.common_weight;
     (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
         v.pokemon = t.current_pokemon;
+        v.rarity = 'common';
     };
-    t.current_weight = t.current_weight + 5;
+    t.current_weight = t.current_weight + t.common_weight;
 });
 
 for_each(t.current_pokemon, v.uncommon_pokemon, {
     t.weight_start = t.current_weight + 1;
-    t.weight_end = t.current_weight + 3;
+    t.weight_end = t.current_weight + t.uncommon_weight;
     (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
         v.pokemon = t.current_pokemon;
+        v.rarity = 'uncommon';
     };
-    t.current_weight = t.current_weight + 3;
+    t.current_weight = t.current_weight + t.uncommon_weight;
 });
 
 for_each(t.current_pokemon, v.rare_pokemon, {
     t.weight_start = t.current_weight + 1;
-    t.weight_end = t.current_weight + 1;
+    t.weight_end = t.current_weight + t.rare_weight;
     (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
         v.pokemon = t.current_pokemon;
+        v.rarity = 'rare';
     };
-    t.current_weight = t.current_weight + 1;
+    t.current_weight = t.current_weight + t.rare_weight;
 });
 
 return v.pokemon;

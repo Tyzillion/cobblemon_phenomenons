@@ -1,0 +1,2 @@
+v.reason = 'You fled from battle!';
+q.run_script('cobblemon:rustling_combo_break');

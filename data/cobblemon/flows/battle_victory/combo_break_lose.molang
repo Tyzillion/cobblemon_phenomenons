@@ -1,0 +1,8 @@
+t.wild_winner = c.winners;
+
+for_each(t.wild_winners, t.wild_winner, {
+    t.wild_winners.is_wild ? {
+        v.reason = 'You lost the battle!';
+        q.run_script('cobblemon:rustling_combo_break');
+    };
+});

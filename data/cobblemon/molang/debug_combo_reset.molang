@@ -5,6 +5,3 @@ t.playercombo.data.kocatch_combo = 0;
 t.playercombo.save_data();
 
 t.playercombo.tell('§c§lCombo Reset! §7Your rustling combo has been reset from ' + v.old_combo + ' to 0.');
-(v.old_combo > 10) ? {
-    t.playercombo.tell('§7That was a high combo! Start building it up again by using rustling spots.');
-};
