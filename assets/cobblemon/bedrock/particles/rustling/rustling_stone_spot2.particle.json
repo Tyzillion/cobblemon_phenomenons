@@ -8,13 +8,6 @@
 				"texture": "textures/particles/pebbles"
 			}
 		},
-		"events": {
-			"event_sound": {
-				"sound_effect": {
-					"event_name": "minecraft:block.stone.hit"
-				}
-			}
-		},
 		"components": {
 			"minecraft:emitter_rate_steady": {
 				"spawn_rate": 12,
@@ -22,9 +15,6 @@
 			},
 			"minecraft:emitter_lifetime_looping": {
 				"active_time": 0.75
-			},
-			"minecraft:emitter_lifetime_events": {
-				"creation_event": "event_sound"
 			},
 			"minecraft:emitter_shape_disc": {
 				"offset": [0, 0.1, 0],

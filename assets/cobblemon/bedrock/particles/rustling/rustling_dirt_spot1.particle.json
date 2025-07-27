@@ -13,6 +13,9 @@
 				"particle_effect": {
 					"effect": "cobblemon:rustling_dirt_spot2",
 					"type": "particle"
+				},
+				"sound_effect": {
+					"event_name": "cobblemon:rocky_rustling"
 				}
 			},
 			"event_bubble": {

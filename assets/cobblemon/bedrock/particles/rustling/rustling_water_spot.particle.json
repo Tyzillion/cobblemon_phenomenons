@@ -13,12 +13,15 @@
 				"particle_effect": {
 					"effect": "cobblemon:rustling_water_spot2",
 					"type": "particle"
+				},
+				"sound_effect": {
+					"event_name": "cobblemon:water_ripple"
 				}
 			},
 			"event_fishy": {
 				"particle_effect": {
 					"effect": "cobblemon:rustling_water_spot3",
-					"type": "emitter"
+					"type": "particle"
 				}
 			}
 		},

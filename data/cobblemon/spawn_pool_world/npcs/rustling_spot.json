@@ -8,7 +8,7 @@
       "type": "npc",
       "context": "grounded",
       "bucket": "common",
-      "weight": 2,
+      "weight": 5,
       "level": "1",
       "condition": {
         "biomes": [
