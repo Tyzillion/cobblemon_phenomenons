@@ -12,6 +12,10 @@
 			"event_sound": {
 				"sound_effect": {
 					"event_name": "minecraft:block.sand.hit"
+				},
+				"particle_effect": {
+					"effect": "cobblemon:rustling_red_sand_spot2",
+					"type": "particle"
 				}
 			}
 		},

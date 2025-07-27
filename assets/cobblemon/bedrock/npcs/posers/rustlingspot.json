@@ -6,15 +6,23 @@
   "poses": {
     "anti-condition": {
       "poseName": "anti-condition",
-      "condition": "!q.is_standing_on_blocks(1, 'minecraft:gravel', 'minecraft:suspicious_gravel', 'minecraft:suspicious_sand', 'minecraft:packed_mud', 'minecraft:grass_block', 'minecraft:sand', 'minecraft:red_sand', 'minecraft:dirt', 'minecraft:coarse_dirt', 'minecraft:podzol', 'minecraft:mycelium', 'minecraft:rooted_dirt', 'minecraft:mud', 'minecraft:moss_block', 'minecraft:muddy_mangrove_roots')",
+      "condition": "!q.is_touching_water && !q.is_standing_on_blocks(1, 'minecraft:oak_leaves', 'minecraft:spruce_leaves', 'minecraft:birch_leaves', 'minecraft:jungle_leaves', 'minecraft:acacia_leaves', 'minecraft:dark_oak_leaves', 'minecraft:mangrove_leaves', 'minecraft:azalea_leaves', 'minecraft:flowering_azalea_leaves','minecraft:deepslate', 'minecraft:deepslate_cobblestone', 'minecraft:deepslate_iron_ore', 'minecraft:deepslate_gold_ore', 'minecraft:deepslate_redstone_ore', 'minecraft:deepslate_lapis_ore', 'minecraft:deepslate_coal_ore', 'minecraft:deepslate_diamond_ore', 'minecraft:deepslate_emerald_ore', 'minecraft:cobblestone', 'minecraft:iron_ore', 'minecraft:gold_ore', 'minecraft:redstone_ore', 'minecraft:lapis_ore', 'minecraft:coal_ore', 'minecraft:diamond_ore', 'minecraft:emerald_ore', 'minecraft:stone', 'minecraft:cobblestone', 'minecraft:andesite', 'minecraft:diorite', 'minecraft:granite', 'minecraft:tuff', 'minecraft:calcite', 'minecraft:tuff', 'minecraft:dripstone_block', 'minecraft:gravel', 'minecraft:suspicious_gravel', 'minecraft:suspicious_sand', 'minecraft:packed_mud', 'minecraft:grass_block', 'minecraft:sand', 'minecraft:red_sand', 'minecraft:dirt', 'minecraft:coarse_dirt', 'minecraft:podzol', 'minecraft:mycelium', 'minecraft:rooted_dirt', 'minecraft:mud', 'minecraft:moss_block', 'minecraft:muddy_mangrove_roots')",
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         "q.bedrock('rustling_spot', 'blank')"
       ]
     },
+    "water": {
+      "poseName": "water",
+      "condition": "q.is_touching_water",
+      "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
+      "animations": [
+        "q.bedrock('rustling_spot', 'water')"
+      ]
+    },
     "grass": {
       "poseName": "grass",
-      "condition": "q.is_standing_on_blocks(1, 'minecraft:grass_block', 'minecraft:moss_block')",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:grass_block', 'minecraft:moss_block')",
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         "q.bedrock('rustling_spot', 'grass')"
@@ -22,7 +30,7 @@
     },
     "dirt": {
       "poseName": "dirt",
-      "condition": "q.is_standing_on_blocks(1, 'minecraft:dirt', 'minecraft:coarse_dirt', 'minecraft:podzol', 'minecraft:mycelium', 'minecraft:rooted_dirt', 'minecraft:mud', 'minecraft:muddy_mangrove_roots')",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:dripstone_block', 'minecraft:dirt', 'minecraft:coarse_dirt', 'minecraft:podzol', 'minecraft:mycelium', 'minecraft:rooted_dirt', 'minecraft:mud', 'minecraft:muddy_mangrove_roots')",
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         "q.bedrock('rustling_spot', 'dirt')"
@@ -30,7 +38,7 @@
     },
     "sand": {
       "poseName": "sand",
-      "condition": "q.is_standing_on_blocks(1, 'minecraft:sand', 'minecraft:red_sand', 'minecraft:sandstone', 'minecraft:red_sandstone', 'minecraft:suspicious_sand')",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:sand', 'minecraft:sandstone', 'minecraft:suspicious_sand')",
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         "q.bedrock('rustling_spot', 'sand')"
@@ -38,7 +46,7 @@
     },
     "red_sand": {
       "poseName": "red_sand",
-      "condition": "q.is_standing_on_blocks(1, 'minecraft:red_sand', 'minecraft:red_sandstone')",
+      "condition": "!q.is_touching_water &&q.is_standing_on_blocks(1, 'minecraft:red_sand', 'minecraft:red_sandstone')",
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         "q.bedrock('rustling_spot', 'red_sand')"
@@ -46,10 +54,34 @@
     },
     "gravel": {
       "poseName": "gravel",
-      "condition": "q.is_standing_on_blocks(1, 'minecraft:gravel', 'minecraft:suspicious_gravel')",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:gravel', 'minecraft:suspicious_gravel')",
       "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
       "animations": [
         "q.bedrock('rustling_spot', 'gravel')"
+      ]
+    },
+    "stone": {
+      "poseName": "stone",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:cobblestone', 'minecraft:iron_ore', 'minecraft:gold_ore', 'minecraft:redstone_ore', 'minecraft:lapis_ore', 'minecraft:coal_ore', 'minecraft:diamond_ore', 'minecraft:emerald_ore', 'minecraft:stone', 'minecraft:cobblestone', 'minecraft:andesite', 'minecraft:diorite', 'minecraft:granite', 'minecraft:tuff', 'minecraft:calcite', 'minecraft:tuff', 'minecraft:dripstone_block')",
+      "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
+      "animations": [
+        "q.bedrock('rustling_spot', 'stone')"
+      ]
+    },
+    "deepslate": {
+      "poseName": "deepslate",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:deepslate', 'minecraft:deepslate_cobblestone', 'minecraft:deepslate_iron_ore', 'minecraft:deepslate_gold_ore', 'minecraft:deepslate_redstone_ore', 'minecraft:deepslate_lapis_ore', 'minecraft:deepslate_coal_ore', 'minecraft:deepslate_diamond_ore', 'minecraft:deepslate_emerald_ore')",
+      "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
+      "animations": [
+        "q.bedrock('rustling_spot', 'deepslate')"
+      ]
+    },
+    "leaves": {
+      "poseName": "leaves",
+      "condition": "!q.is_touching_water && q.is_standing_on_blocks(1, 'minecraft:oak_leaves', 'minecraft:spruce_leaves', 'minecraft:birch_leaves', 'minecraft:jungle_leaves', 'minecraft:acacia_leaves', 'minecraft:dark_oak_leaves', 'minecraft:mangrove_leaves', 'minecraft:azalea_leaves', 'minecraft:flowering_azalea_leaves')",
+      "poseTypes": ["STAND", "WALK", "NONE", "PORTRAIT", "PROFILE", "FLOAT", "HOVER", "FLY"],
+      "animations": [
+        "q.bedrock('rustling_spot', 'leaves')"
       ]
     }
   }

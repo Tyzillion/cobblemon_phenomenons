@@ -1,7 +1,7 @@
 {
   "resourceIdentifier": "cobblemon:rustling_spot",
   "names": [
-    "RS"
+    "Phenomenon"
   ],
   "presets": [],
   "interaction": {
@@ -15,7 +15,7 @@
   "isMovable": false,  
   "isLeashable": false,
   "allowProjectileHits": false,
-  "isInvulnerable": false,
+  "isInvulnerable": true,
   "hideNameTag": true,
   "ai": [
     {

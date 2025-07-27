@@ -2,8 +2,8 @@ t.playercombo = q.player;
 v.current_combo = t.playercombo.data.kocatch_combo;
 
 (v.current_combo > 0) ? {
-    t.playercombo.tell('§d§l✨ CONGRATULATIONS! ✨ §7You found a shiny Pokemon!', true);
-    t.playercombo.tell('§c§l-Combo Reset! §7Your combo was automatically reset due to shiny encounter.');
+    t.playercombo.tell('§d§l✨ CONGRATULATIONS! ✨ §7You found a shiny Pokémon!', true);
+    t.playercombo.tell('§c§l-Combo Reset! §7Your combo was automatically reset due to encountering a shiny Pokémon.');
     t.playercombo.tell('§7Previous combo: ' + v.current_combo + ' → Now: 0');
     
     t.playercombo.data.kocatch_combo = 0;

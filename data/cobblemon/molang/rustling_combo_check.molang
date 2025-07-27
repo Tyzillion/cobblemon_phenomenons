@@ -30,4 +30,4 @@ t.playercombo.save_data();
     t.playercombo.tell('§7Bonus: 2% chance for a shiny Pokémon!');
 };
 
-t.playercombo.tell('§a§l+1 Rustling Combo! §7Total: ' + v.new_combo);
+t.playercombo.tell('§a§l+1 Rustling Combo! §7Total: ' + v.new_combo, true);

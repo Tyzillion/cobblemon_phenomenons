@@ -50,7 +50,6 @@ for_each(t.current_pokemon, v.common_pokemon, {
     t.weight_end = t.current_weight + t.common_weight;
     (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
         v.pokemon = t.current_pokemon;
-        v.rarity = 'common';
     };
     t.current_weight = t.current_weight + t.common_weight;
 });
@@ -60,7 +59,6 @@ for_each(t.current_pokemon, v.uncommon_pokemon, {
     t.weight_end = t.current_weight + t.uncommon_weight;
     (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
         v.pokemon = t.current_pokemon;
-        v.rarity = 'uncommon';
     };
     t.current_weight = t.current_weight + t.uncommon_weight;
 });
@@ -70,7 +68,6 @@ for_each(t.current_pokemon, v.rare_pokemon, {
     t.weight_end = t.current_weight + t.rare_weight;
     (t.random_weight >= t.weight_start && t.random_weight <= t.weight_end && v.pokemon == 'undefined') ? {
         v.pokemon = t.current_pokemon;
-        v.rarity = 'rare';
     };
     t.current_weight = t.current_weight + t.rare_weight;
 });

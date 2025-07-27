@@ -1,0 +1,14 @@
+{
+    "initializationAction": "",
+    "speakers": {},
+    "pages": [
+        {
+            "id": "greeting",
+            "lines": ["Input new combo value:"],
+            "input": {
+                "type": "text",
+                "action": "q.player.data.kocatch_combo = q.to_number(v.selected_option); q.dialogue.close();"
+            }
+        }
+    ]
+}
