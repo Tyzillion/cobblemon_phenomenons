@@ -1,4 +1,5 @@
-v.player.in_battle == false ? {
+v.player.in_battle == false && !v.wild_pokemon.is_shiny ? {
     v.wild_pokemon.play_animation('q.bedrock_stateful(\'pokemon\', \'flee\', \'endures_primary_animations\');');
     v.wild_pokemon.run_molang_after('q.run_command(\'tp \' + v.wild_pokemon.uuid + \' \' + v.wild_pokemon.x + \' \' + (v.wild_pokemon.y - 360) + \' \' + v.wild_pokemon.z + \'\'); v.spawned_pokemon.damage(1000);', 1.5);
+    q.run_command('runmolangscript cobblemon:rustling_combo_break ' + v.player.username);
 };

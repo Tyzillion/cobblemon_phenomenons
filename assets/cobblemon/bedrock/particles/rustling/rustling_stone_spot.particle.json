@@ -11,7 +11,17 @@
 		"events": {
 			"event_sound": {
 				"sound_effect": {
-					"event_name": "minecraft:block.stone.hit"
+					"event_name": "cobblemon:rocky_rustling"
+				},
+				"particle_effect": {
+					"effect": "cobblemon:rustling_stone_spot2",
+					"type": "particle"
+				}
+			},
+			"event_particles": {
+				"particle_effect": {
+					"effect": "cobblemon:rustling_stone_spot3",
+					"type": "particle"
 				}
 			}
 		},
@@ -24,7 +34,7 @@
 				"active_time": 0.75
 			},
 			"minecraft:emitter_lifetime_events": {
-				"creation_event": "event_sound"
+				"creation_event": ["event_sound", "event_particles"]
 			},
 			"minecraft:emitter_shape_disc": {
 				"offset": [0, 0.1, 0],
@@ -39,7 +49,8 @@
 			},
 			"minecraft:particle_initial_speed": 2,
 			"minecraft:particle_motion_dynamic": {
-				"linear_acceleration": [0, -4, 0]
+				"linear_acceleration": [0, -4, 0],
+				"linear_drag_coefficient": 1
 			},
 			"minecraft:particle_appearance_billboard": {
 				"size": [0.05, 0.05],

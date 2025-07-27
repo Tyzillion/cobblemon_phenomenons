@@ -1,0 +1,7 @@
+t.playercombo = q.player;
+v.old_combo = t.playercombo.data.kocatch_combo;
+
+t.playercombo.data.kocatch_combo = 0;
+t.playercombo.save_data();
+
+t.playercombo.tell('§c§lCombo Reset! §7Your rustling combo has been reset from ' + v.old_combo + ' to 0.');

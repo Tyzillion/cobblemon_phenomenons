@@ -1,0 +1,9 @@
+{
+	"name": "Phenomenon Mark",
+	"title": "%1$s The Surprising",
+	"titleColor": "007F0E",
+	"description": "A rare mark that signifies a Pokémon found from a phenomenon, such as a rustling spot.",
+	"texture": "cobblemon:textures/gui/mark/mark_phenomenon.png",
+	"chance": 0.1,
+	"indexNumber": 777
+}

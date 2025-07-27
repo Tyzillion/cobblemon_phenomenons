@@ -1,42 +1,148 @@
-
 v.npc = q.entity;
 t.detection_radius = 4.0;
+
+t.biome_list = q.array(
+    'end', 
+    'deep_dark', 
+    'cave', 
+    'dripstone', 
+    'frozen_ocean', 
+    'cold_ocean', 
+    'deep_ocean',
+    'warm_ocean',
+    'lukewarm_ocean',
+    'ocean',
+    'snowy_forest',
+    'cherry_blossom',
+    'bamboo',
+    'forest',
+    'badlands',
+    'desert',
+    'taiga',
+    'tundra',
+    'peak',
+    'highlands',
+    'hills',
+    'plateau',
+    'mountain',
+    'lush',
+    'jungle',
+    'river',
+    'beach',
+    'coast',
+    'island',
+    'swamp',
+    'savanna',
+    'shrubland',
+    'mushroom',
+    'spooky',
+    'magical',
+    'sky_islands',
+    'volcanic',
+    'thermal',
+    'floral',
+    'plains'
+);
 
 t.nearby_entities = v.npc.get_nearby_entities(t.detection_radius);
 
 for_each(v.player, t.nearby_entities, {
 
-    (v.player.is_player && !v.player.in_battle) ? {
+    (v.player.is_player) ? {
+        v.kocatch_combo = v.player.data.kocatch_combo;
         
-        v.player.world.game_time > v.player.get_npc_variable(v.npc, 'rustling_cooldown') ? {
-            {
+        (!v.player.in_battle) ? {
+            v.player.world.game_time > v.player.get_npc_variable(v.npc, 'rustling_cooldown') ? {
                 t.cooldown_time = v.player.world.game_time + 100;
                 v.player.set_npc_variable(v.npc, 'rustling_cooldown', t.cooldown_time);
                 v.player.save_data();
                 t.current_biome = v.npc.biome;
                 v.biome_type = 'plains';
 
-                t.biome_list = q.array('end', 'deep_dark', 'cave', 'dripstone', 'frozen_ocean', 'cold_ocean', 'deep_ocean', 'warm_ocean', 'lukewarm_ocean', 'ocean', 'snowy_forest', 'cherry_blossom', 'bamboo', 'forest', 'badlands', 'desert', 'taiga', 'tundra', 'peak', 'highlands', 'hills', 'plateau', 'mountain', 'lush', 'jungle', 'river', 'beach', 'coast', 'island', 'swamp', 'savanna', 'shrubland', 'mushroom', 'spooky', 'magical', 'sky_islands', 'volcanic', 'thermal', 'floral', 'plains');
-
                 for_each(t.biome, t.biome_list, {
                     t.current_biome.is_in('#cobblemon:is_' + t.biome) ? (v.biome_type = t.biome);
                 });
 
-                v.player.tell('§7Debug: Detected biome = ' + t.current_biome + ', biome_type = ' + v.biome_type);
+                v.combo_bonus = 0;
+                (v.kocatch_combo >= 5) ? (v.combo_bonus = 1);
+                (v.kocatch_combo >= 10) ? (v.combo_bonus = 2);
+                (v.kocatch_combo >= 20) ? (v.combo_bonus = 3);
 
                 v.selected_pokemon = q.run_script('cobblemon:pokemon_spawns');
 
-                t.pokemon_level = math.random_integer(5, v.player.party.average_level);
+                t.pokemon_level = math.random_integer(5, (v.player.party.average_level / 1.5));
                 (t.pokemon_level <= 5) ? (t.pokemon_level = 35);
                 
+                t.level_bonus = 0;
+                (v.kocatch_combo >= 10) ? (t.level_bonus = 2);
+                (v.kocatch_combo >= 20) ? (t.level_bonus = 5);
+                (v.kocatch_combo >= 50) ? (t.level_bonus = 10);
+                t.pokemon_level = math.min(t.pokemon_level + t.level_bonus, 100);
+                
                 t.pokemon_props = v.selected_pokemon + ' lvl=' + t.pokemon_level;
+
+                (v.kocatch_combo >= 120) ? {
+                    t.ha_chance = math.random_integer(1, 100);
+                    (t.ha_chance <= 20) ? {
+                        t.pokemon_props = t.pokemon_props + ' ha';
+                        v.player.tell('§dCombo bonus forced a hidden ability encounter!!');
+                    };
+                } : {
+                    (v.kocatch_combo >= 60) ? {
+                        t.ha_chance = math.random_integer(1, 100);
+                        (t.ha_chance <= 10) ? {
+                            t.pokemon_props = t.pokemon_props + ' ha';
+                            v.player.tell('§dCombo bonus forced a hidden ability encounter!!');
+                        };
+                    };
+                };
                 
-                t.spawn_x = v.npc.x;
-                t.spawn_y = v.npc.y;
-                t.spawn_z = v.npc.z;
+                (v.kocatch_combo >= 300) ? {
+                    t.shiny_chance = math.random_integer(1, 100);
+                    (t.shiny_chance <= 10) ? {
+                        t.pokemon_props = t.pokemon_props + ' s';
+                        v.player.tell('§d✨ Combo bonus forced a shiny encounter!! ✨');
+                    };
+                } : {
+                    (v.kocatch_combo >= 200) ? {
+                        t.shiny_chance = math.random_integer(1, 100);
+                        (t.shiny_chance <= 5) ? {
+                            t.pokemon_props = t.pokemon_props + ' s';
+                            v.player.tell('§d✨ Combo bonus forced a shiny encounter!! ✨');
+                        };
+                    } : {
+                        (v.kocatch_combo >= 100) ? {
+                            t.shiny_chance = math.random_integer(1, 100);
+                            (t.shiny_chance <= 1) ? {
+                                t.pokemon_props = t.pokemon_props + ' s';
+                                v.player.tell('§d✨ Combo bonus forced a shiny encounter!! ✨');
+                            };
+                        };
+                    };
+                };                
+                v.spawned_pokemon = v.player.world.spawn_pokemon(v.npc.x, v.npc.y, v.npc.z, t.pokemon_props);
+
+                q.run_command('runmolangscript cobblemon:rustling_combo_check ' + v.player.username);
+
+                v.spawned_pokemon.run_molang_after('q.run_command(\'bedrockparticle cobblemon:pokemon_appear \' + v.spawned_pokemon.uuid + \' middle\');', 0.1);
+
+                v.spawned_pokemon.add_potential_marks('cobblemon:mark_phenomenon');
                 
-                v.spawned_pokemon = v.player.world.spawn_pokemon(t.spawn_x, t.spawn_y, t.spawn_z, t.pokemon_props);
+                (v.spawned_pokemon.is_shiny) ? {
+                    q.run_command('runmolangscript cobblemon:rustling_shiny_encounter ' + v.player.username);
+                };
                 
+                (v.kocatch_combo >= 50) ? {
+                    math.random_integer(1,100) <= 10 ? {
+                        v.spawned_pokemon.add_marks('cobblemon:mark_phenomenon');
+                    };
+                } : {
+                    (v.kocatch_combo >= 20) ? {
+                        math.random_integer(1,100) <= 5 ? {
+                            v.spawned_pokemon.add_marks('cobblemon:mark_phenomenon');
+                        };
+                    };
+                };
                 v.battle_started = v.spawned_pokemon.attempt_wild_battle(v.player);
                 
                 v.battle_started ? {
@@ -44,13 +150,16 @@ for_each(v.player, t.nearby_entities, {
 
                     v.wild_pokemon.run_molang_after('q.run_script(\'cobblemon:flee_animation\')', 2.0);
 
-                    v.player.tell('§eA wild MOTHERFUCKING ' + v.selected_pokemon + ' appeared from the rustling spot! §7(Biome: ' + v.biome_type + ')');
+                    (v.kocatch_combo == 0) ? {
+                        v.player.tell('§7Catching or defeating this Pokémon will continue the combo!');
+                    };
+                    v.npc.set_invulnerable(false);
                     q.run_command('tp ' + v.npc.uuid + ' ' + v.npc.x + ' ' + (v.npc.y - 360) + ' ' + v.npc.z);
                     v.npc.damage(1000);
                 } : {
                     v.spawned_pokemon.damage(1000);
                 };  
             };
-        };
+        }
     };
 });
