@@ -28,7 +28,6 @@ t.biome_list = q.array(
     'lush',
     'jungle',
     'river',
-    'beach',
     'coast',
     'island',
     'swamp',
