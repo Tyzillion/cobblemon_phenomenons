@@ -103,6 +103,16 @@
 					"locator": "particle"
 				}
 			}
+		},
+		"animation.rustling_spot.snowy": {
+			"loop": true,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.0": {
+					"effect": "cobblemon:rustling_snow_spot",
+					"locator": "particle"
+				}
+			}
 		}
 	}
 }
