@@ -1,7 +1,13 @@
 q.array(
-    'kadabra', 
-    'hypno', 
-    'alakazam', 
-    'clefable', 
-    'gardevoir'
+    'abra',
+    'alakazam',
+    'chimecho',
+    'chingling',
+    'clefable',
+    'clefairy',
+    'cleffa',
+    'hatenna',
+    'hatterene',
+    'hattrem',
+    'kadabra'
 );

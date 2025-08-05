@@ -1,10 +1,13 @@
 q.array(
-    'victreebel', 
-    'vileplume', 
-    'parasect', 
-    'venomoth',
-    'arbok',
-    'beedrill',
-    'butterfree',
-    'tangela'
+    'araquanid',
+    'chatot',
+    'dewpider',
+    'flamigo',
+    'heracross',
+    'kecleon',
+    'larvesta',
+    'scizor',
+    'scyther',
+    'tropius',
+    'volcarona'
 );

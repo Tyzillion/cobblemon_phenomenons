@@ -1,7 +1,18 @@
 q.array(
-    'sandshrew', 
-    'diglett', 
-    'meowth', 
-    'mankey', 
-    'geodude'
+    'cacnea',
+    'cacturne',
+    'cubone',
+    'darmanitan',
+    'darumaka',
+    'golett',
+    'golurk',
+    'hippopotas',
+    'hippowdon',
+    'krokorok',
+    'krookodile',
+    'maractus',
+    'marowak',
+    'sandile',
+    'sandshrew',
+    'sandslash'
 );

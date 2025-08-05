@@ -1,9 +1,13 @@
 q.array(
-    'sandslash', 
-    'dugtrio', 
-    'growlithe', 
-    'machop', 
-    'ponyta', 
-    'rhyhorn', 
-    'cubone'
+    'baltoy',
+    'claydol',
+    'cofagrigus',
+    'larvesta',
+    'luxio',
+    'luxray',
+    'shinx',
+    'sigilyph',
+    'trapinch',
+    'volcarona',
+    'yamask'
 );

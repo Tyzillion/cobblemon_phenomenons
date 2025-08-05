@@ -1,7 +1,14 @@
 q.array(
-    'sandslash', 
-    'dugtrio', 
-    'rhydon', 
-    'gliscor', 
-    'camerupt'
+    'baltoy',
+    'claydol',
+    'copperajah',
+    'cufant',
+    'falinks',
+    'gligar',
+    'gliscor',
+    'heatmor',
+    'klawf',
+    'revavroom',
+    'sigilyph',
+    'varoom'
 );

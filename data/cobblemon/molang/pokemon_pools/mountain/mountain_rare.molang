@@ -1,6 +1,11 @@
 q.array(
-    'golem', 
-    'rhydon', 
-    'machamp', 
-    'crobat'
+    'absol',
+    'gabite',
+    'garchomp',
+    'gible',
+    'larvitar',
+    'lucario',
+    'pupitar',
+    'riolu',
+    'tyranitar'
 );

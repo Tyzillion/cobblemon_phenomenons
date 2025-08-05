@@ -1,7 +1,4 @@
 q.array(
-    'golem', 
-    'rhydon', 
-    'lairon', 
-    'rampardos', 
-    'bronzor'
+    'crabominable',
+    'delibird'
 );

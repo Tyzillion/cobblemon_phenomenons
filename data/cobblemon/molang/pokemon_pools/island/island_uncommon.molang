@@ -1,7 +1,5 @@
 q.array(
-    'pelipper', 
-    'tentacruel', 
-    'lumineon', 
-    'starmie', 
-    'tropius'
+    'cramorant',
+    'kilowattrel',
+    'wattrel'
 );

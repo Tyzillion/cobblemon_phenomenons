@@ -1,7 +1,15 @@
 q.array(
-    'abra', 
-    'drowzee', 
-    'mr_mime', 
-    'jynx', 
-    'clefairy'
+    'goldeen',
+    'golduck',
+    'grimmsnarl',
+    'impidimp',
+    'morelull',
+    'morgrem',
+    'politoed',
+    'poliwag',
+    'poliwhirl',
+    'poliwrath',
+    'psyduck',
+    'seaking',
+    'shiinotic'
 );

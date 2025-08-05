@@ -1,9 +1,18 @@
 q.array(
-    'spearow', 
-    'ekans', 
-    'nidoranm', 
-    'paras', 
-    'venonat', 
-    'mankey', 
-    'bellsprout'
+    'araquanid',
+    'bibarel',
+    'bidoof',
+    'bonsly',
+    'chimecho',
+    'chingling',
+    'dewpider',
+    'ninetales',
+    'pachirisu',
+    'pichu',
+    'pikachu',
+    'raichu',
+    'sudowoodo',
+    'vulpix',
+    'zoroark',
+    'zorua'
 );

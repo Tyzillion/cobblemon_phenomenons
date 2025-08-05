@@ -1,7 +1,11 @@
 q.array(
-    'abomasnow', 
-    'piloswine', 
-    'glalie', 
-    'sealeo', 
-    'beartic'
+    'bibarel',
+    'bidoof',
+    'chimecho',
+    'chingling',
+    'emolga',
+    'ninetales',
+    'sneasel',
+    'vulpix',
+    'weavile'
 );

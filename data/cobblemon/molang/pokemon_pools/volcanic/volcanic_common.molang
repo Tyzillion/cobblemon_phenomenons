@@ -1,7 +1,14 @@
 q.array(
-    'charmander', 
-    'growlithe', 
-    'ponyta', 
-    'magmar', 
-    'torchic'
+    'camerupt',
+    'centiskorch',
+    'cubone',
+    'magby',
+    'magcargo',
+    'magmar',
+    'magmortar',
+    'numel',
+    'salandit',
+    'salazzle',
+    'sizzlipede',
+    'slugma'
 );

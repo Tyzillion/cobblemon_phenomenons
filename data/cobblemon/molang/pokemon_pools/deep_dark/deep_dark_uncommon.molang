@@ -1,7 +1,15 @@
 q.array(
-    'golbat', 
-    'golem', 
-    'marowak', 
-    'haunter', 
-    'gengar'
+    'boldore',
+    'crobat',
+    'exploud',
+    'gigalith',
+    'golbat',
+    'golett',
+    'golurk',
+    'loudred',
+    'mawile',
+    'roggenrola',
+    'spiritomb',
+    'whismur',
+    'zubat'
 );

@@ -1,9 +1,5 @@
 q.array(
-    'kadabra', 
-    'hypno', 
-    'haunter', 
-    'beheeyem', 
-    'gothorita', 
-    'solosis', 
-    'munna'
+    'beheeyem',
+    'elgyem',
+    'sigilyph'
 );

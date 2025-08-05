@@ -1,7 +1,16 @@
 q.array(
-    'graveler', 
-    'rhydon', 
-    'dugtrio', 
-    'sandslash', 
-    'gliscor'
+    'clefable',
+    'clefairy',
+    'cleffa',
+    'copperajah',
+    'cufant',
+    'electabuzz',
+    'electivire',
+    'elekid',
+    'heatmor',
+    'hitmonchan',
+    'hitmonlee',
+    'hitmontop',
+    'spinda',
+    'tyrogue'
 );

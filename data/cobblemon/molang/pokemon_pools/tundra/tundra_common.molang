@@ -1,7 +1,11 @@
 q.array(
-    'snorunt', 
-    'swinub', 
-    'snover', 
-    'bergmite', 
-    'cubchoo'
+    'basculegion',
+    'eiscue',
+    'furret',
+    'mamoswine',
+    'piloswine',
+    'sentret',
+    'stantler',
+    'swinub',
+    'wyrdeer'
 );

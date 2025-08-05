@@ -1,7 +1,14 @@
 q.array(
-    'tentacruel', 
-    'kingler', 
-    'pelipper', 
-    'cloyster', 
-    'starmie'
+    'barbaracle',
+    'binacle',
+    'cramorant',
+    'golisopod',
+    'kilowattrel',
+    'mareanie',
+    'pincurchin',
+    'starmie',
+    'staryu',
+    'toxapex',
+    'wattrel',
+    'wimpod'
 );

@@ -1,7 +1,14 @@
 q.array(
-    'swinub', 
-    'snorunt', 
-    'snover', 
-    'cubchoo', 
-    'vanillite'
+    'basculegion',
+    'bibarel',
+    'bidoof',
+    'buneary',
+    'deerling',
+    'lopunny',
+    'sawsbuck',
+    'stantler',
+    'staraptor',
+    'staravia',
+    'starly',
+    'wyrdeer'
 );

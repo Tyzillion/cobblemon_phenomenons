@@ -1,9 +1,19 @@
 q.array(
-    'pidgey', 
-    'rattata', 
-    'spearow', 
-    'meowth',
-    'psyduck',
-    'ponyta',
-    'farfetchd'
+    'ampharos',
+    'bouffalant',
+    'caterpie',
+    'cottonee',
+    'deerling',
+    'dubwool',
+    'flaaffy',
+    'igglybuff',
+    'jigglypuff',
+    'mareep',
+    'metapod',
+    'sawsbuck',
+    'scatterbug',
+    'spewpa',
+    'whimsicott',
+    'wigglytuff',
+    'wooloo'
 );

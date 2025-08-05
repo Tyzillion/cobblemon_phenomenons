@@ -1,7 +1,9 @@
 q.array(
-    'tentacool', 
-    'magikarp', 
-    'staryu', 
-    'omanyte', 
-    'kabuto'
+    'chinchou',
+    'finneon',
+    'lanturn',
+    'lumineon',
+    'relicanth',
+    'tentacool',
+    'tentacruel'
 );

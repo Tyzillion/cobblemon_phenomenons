@@ -1,7 +1,4 @@
 q.array(
-    'wingull', 
-    'tentacool', 
-    'corsola', 
-    'finneon', 
-    'staryu'
+    'kilowattrel',
+    'wattrel'
 );

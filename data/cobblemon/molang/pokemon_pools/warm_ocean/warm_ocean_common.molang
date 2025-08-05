@@ -1,7 +1,14 @@
 q.array(
-    'tentacool', 
-    'corsola', 
-    'horsea', 
-    'staryu', 
-    'magikarp'
+    'bruxish',
+    'corsola',
+    'horsea',
+    'kingdra',
+    'luvdisc',
+    'mareanie',
+    'pyukumuku',
+    'qwilfish',
+    'seadra',
+    'toxapex',
+    'wiglett',
+    'wugtrio'
 );

@@ -1,5 +1,10 @@
 q.array(
-    'golem', 
-    'rhyperior', 
-    'excadrill'
+    'abra',
+    'alakazam',
+    'kadabra',
+    'kleavor',
+    'munchlax',
+    'scyther',
+    'snorlax',
+    'whiscash'
 );

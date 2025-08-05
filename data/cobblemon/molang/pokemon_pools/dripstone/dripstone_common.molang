@@ -1,7 +1,5 @@
 q.array(
-    'zubat', 
-    'geodude', 
-    'onix', 
-    'rhyhorn', 
-    'aron'
+    'goomy',
+    'lunatone',
+    'solrock'
 );

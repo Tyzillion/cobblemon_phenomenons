@@ -1,7 +1,17 @@
 q.array(
-    'oddish', 
-    'bellsprout', 
-    'tangela', 
-    'bulbasaur', 
-    'chikorita'
+    'ferroseed',
+    'ferrothorn',
+    'goomy',
+    'morelull',
+    'politoed',
+    'poliwag',
+    'poliwhirl',
+    'poliwrath',
+    'quagsire',
+    'scolipede',
+    'shiinotic',
+    'shuckle',
+    'venipede',
+    'whirlipede',
+    'wooper'
 );

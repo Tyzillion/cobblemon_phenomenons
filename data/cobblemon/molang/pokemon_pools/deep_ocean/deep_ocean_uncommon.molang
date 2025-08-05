@@ -1,7 +1,9 @@
 q.array(
-    'tentacruel', 
-    'starmie', 
-    'omastar', 
-    'kabutops', 
-    'lapras'
+    'alomomola',
+    'clamperl',
+    'gorebyss',
+    'huntail',
+    'relicanth',
+    'wailmer',
+    'wailord'
 );

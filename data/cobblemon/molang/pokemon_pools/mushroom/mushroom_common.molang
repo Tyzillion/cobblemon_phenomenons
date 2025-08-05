@@ -1,7 +1,20 @@
 q.array(
-    'paras', 
-    'oddish', 
-    'bellsprout', 
-    'shroomish', 
-    'foongus'
+    'amoonguss',
+    'barboach',
+    'breloom',
+    'foongus',
+    'lechonk',
+    'morelull',
+    'oinkologne',
+    'paras',
+    'parasect',
+    'politoed',
+    'poliwag',
+    'poliwhirl',
+    'poliwrath',
+    'quagsire',
+    'shiinotic',
+    'shroomish',
+    'whiscash',
+    'wooper'
 );

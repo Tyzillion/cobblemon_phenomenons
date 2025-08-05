@@ -1,7 +1,8 @@
 q.array(
-    'gloom', 
-    'weepinbell', 
-    'tangrowth', 
-    'ivysaur', 
-    'bayleef'
+    'carnivine',
+    'paras',
+    'parasect',
+    'shuckle',
+    'yanma',
+    'yanmega'
 );

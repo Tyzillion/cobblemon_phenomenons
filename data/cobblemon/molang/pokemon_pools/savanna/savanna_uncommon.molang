@@ -1,9 +1,15 @@
 q.array(
-    'arcanine', 
-    'rapidash', 
-    'dodrio', 
-    'rhydon', 
-    'kangaskhan', 
-    'girafarig', 
-    'miltank'
+    'clodsire',
+    'copperajah',
+    'cufant',
+    'flamigo',
+    'luxio',
+    'luxray',
+    'nidoking',
+    'nidoqueen',
+    'nidoran♀',
+    'nidoran♂',
+    'nidorina',
+    'nidorino',
+    'shinx'
 );

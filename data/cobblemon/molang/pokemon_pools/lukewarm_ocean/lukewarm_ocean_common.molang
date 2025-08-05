@@ -1,7 +1,8 @@
 q.array(
-    'tentacool', 
-    'krabby', 
-    'horsea', 
-    'staryu', 
-    'magikarp'
+    'horsea',
+    'kingdra',
+    'qwilfish',
+    'seadra',
+    'wiglett',
+    'wugtrio'
 );

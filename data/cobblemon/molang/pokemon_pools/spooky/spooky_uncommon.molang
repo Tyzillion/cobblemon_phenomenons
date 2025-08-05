@@ -1,7 +1,4 @@
 q.array(
-    'haunter', 
-    'golbat', 
-    'marowak', 
-    'dusclops', 
-    'misdreavus'
+    'chimecho',
+    'chingling'
 );
