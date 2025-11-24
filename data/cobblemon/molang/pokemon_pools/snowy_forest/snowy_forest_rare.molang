@@ -1,9 +1,19 @@
 q.array(
     'absol',
+    'chesnaught',
+    'decidueye',
+    'froslass',
     'gallade',
     'gardevoir',
     'kirlia',
+    'mamoswine',
+    'meganium',
     'munchlax',
     'ralts',
-    'snorlax'
+    'rillaboom',
+    'sceptile',
+    'serperior',
+    'snorlax',
+    'torterra',
+    'venusaur'
 );

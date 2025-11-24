@@ -1,6 +1,17 @@
 q.array(
-    'golem', 
-    'rhyperior', 
-    'aggron', 
-    'gigalith'
+    'aggron',
+    'chesnaught',
+    'decidueye',
+    'gigalith',
+    'golem',
+    'krookodile',
+    'machamp',
+    'meganium',
+    'rhyperior',
+    'rillaboom',
+    'sceptile',
+    'serperior',
+    'torterra',
+    'tyranitar',
+    'venusaur'
 );

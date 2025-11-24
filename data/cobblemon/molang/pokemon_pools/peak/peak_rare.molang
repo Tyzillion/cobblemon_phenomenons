@@ -1,5 +1,15 @@
 q.array(
-    'rhyperior', 
-    'aggron', 
-    'bronzong'
+    'aggron',
+    'bronzong',
+    'corviknight',
+    'crobat',
+    'froslass',
+    'gigalith',
+    'golem',
+    'krookodile',
+    'machamp',
+    'mamoswine',
+    'pidgeot',
+    'rhyperior',
+    'tyranitar'
 );

@@ -1,3 +1,15 @@
 q.array(
+    'chesnaught',
+    'crobat',
+    'decidueye',
+    'meganium',
+    'nidoking',
+    'nidoqueen',
+    'rillaboom',
+    'sceptile',
+    'serperior',
+    'torterra',
+    'venusaur',
+    'vileplume',
     'whiscash'
 );

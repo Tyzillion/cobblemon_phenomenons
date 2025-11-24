@@ -1,5 +1,14 @@
 q.array(
-    'crobat', 
-    'machamp', 
-    'steelix'
+    'aggron',
+    'crobat',
+    'gigalith',
+    'golem',
+    'grimmsnarl',
+    'hydreigon',
+    'krookodile',
+    'machamp',
+    'magmortar',
+    'rhyperior',
+    'steelix',
+    'tyranitar'
 );

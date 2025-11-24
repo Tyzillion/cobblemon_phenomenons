@@ -1,3 +1,20 @@
 q.array(
-    'kangaskhan'
+    'blaziken',
+    'chandelure',
+    'charizard',
+    'chesnaught',
+    'cinderace',
+    'coalossal',
+    'decidueye',
+    'emboar',
+    'incineroar',
+    'infernape',
+    'kangaskhan',
+    'meganium',
+    'rillaboom',
+    'sceptile',
+    'serperior',
+    'torterra',
+    'typhlosion',
+    'venusaur'
 );

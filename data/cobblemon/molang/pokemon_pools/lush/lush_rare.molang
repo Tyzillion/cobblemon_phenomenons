@@ -1,3 +1,13 @@
 q.array(
-    'goomy'
+    'chesnaught',
+    'decidueye',
+    'goomy',
+    'meganium',
+    'rillaboom',
+    'sceptile',
+    'scizor',
+    'serperior',
+    'torterra',
+    'venusaur',
+    'volcarona'
 );

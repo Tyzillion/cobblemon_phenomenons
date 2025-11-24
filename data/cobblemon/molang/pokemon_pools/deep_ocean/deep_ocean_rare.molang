@@ -1,5 +1,9 @@
 q.array(
-    'gyarados', 
-    'aerodactyl', 
-    'kyogre'
+    'aerodactyl',
+    'gyarados',
+    'kingdra',
+    'milotic',
+    'poliwrath',
+    'relicanth',
+    'rotom_wash'
 );

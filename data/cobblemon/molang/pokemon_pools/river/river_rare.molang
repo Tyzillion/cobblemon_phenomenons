@@ -1,6 +1,10 @@
 q.array(
-    'gyarados', 
-    'poliwrath', 
-    'dragonair', 
-    'dragonite'
+    'dragonair',
+    'dragonite',
+    'gyarados',
+    'kingdra',
+    'milotic',
+    'poliwrath',
+    'relicanth',
+    'rotom_wash'
 );

@@ -1,5 +1,19 @@
 q.array(
-    'entei', 
-    'heatran', 
-    'torchic'
+    'aggron',
+    'blaziken',
+    'chandelure',
+    'charizard',
+    'cinderace',
+    'coalossal',
+    'emboar',
+    'gigalith',
+    'golem',
+    'incineroar',
+    'infernape',
+    'krookodile',
+    'machamp',
+    'rhyperior',
+    'torchic',
+    'typhlosion',
+    'tyranitar'
 );

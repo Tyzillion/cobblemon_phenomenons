@@ -1,3 +1,14 @@
 q.array(
-    'mimikyu'
+    'alakazam',
+    'crobat',
+    'gallade',
+    'gardevoir',
+    'grimmsnarl',
+    'hydreigon',
+    'krookodile',
+    'metagross',
+    'mimikyu',
+    'nidoking',
+    'nidoqueen',
+    'vileplume'
 );

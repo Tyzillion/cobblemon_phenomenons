@@ -1,11 +1,20 @@
 q.array(
     'absol',
+    'aggron',
+    'corviknight',
+    'crobat',
     'gabite',
     'garchomp',
     'gible',
+    'gigalith',
+    'golem',
+    'krookodile',
     'larvitar',
     'lucario',
+    'machamp',
+    'pidgeot',
     'pupitar',
+    'rhyperior',
     'riolu',
     'tyranitar'
 );

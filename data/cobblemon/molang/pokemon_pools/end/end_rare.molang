@@ -1,5 +1,11 @@
 q.array(
+    'alakazam',
     'beldum',
+    'gallade',
+    'gardevoir',
+    'grimmsnarl',
+    'hydreigon',
+    'krookodile',
     'metagross',
     'metang'
 );

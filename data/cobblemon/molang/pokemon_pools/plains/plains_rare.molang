@@ -1,3 +1,14 @@
 q.array(
-    'stonjourner'
+    'chesnaught',
+    'corviknight',
+    'crobat',
+    'decidueye',
+    'meganium',
+    'pidgeot',
+    'rillaboom',
+    'sceptile',
+    'serperior',
+    'stonjourner',
+    'torterra',
+    'venusaur'
 );

@@ -1,6 +1,12 @@
 q.array(
+    'aggron',
     'bagon',
-    'goomy',
+    'gigalith',
+    'golem',
+    'krookodile',
+    'machamp',
+    'rhyperior',
     'salamence',
-    'shelgon'
+    'shelgon',
+    'tyranitar'
 );

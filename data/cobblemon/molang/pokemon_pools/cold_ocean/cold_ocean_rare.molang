@@ -1,5 +1,11 @@
 q.array(
-    'gyarados', 
-    'kingdra', 
-    'lapras'
+    'froslass',
+    'gyarados',
+    'kingdra',
+    'lapras',
+    'mamoswine',
+    'milotic',
+    'poliwrath',
+    'relicanth',
+    'rotom_wash'
 );

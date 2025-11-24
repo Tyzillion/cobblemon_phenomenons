@@ -1,5 +1,11 @@
 q.array(
-    'froslass', 
-    'mamoswine', 
-    'regice'
+    'aggron',
+    'froslass',
+    'gigalith',
+    'golem',
+    'krookodile',
+    'machamp',
+    'mamoswine',
+    'rhyperior',
+    'tyranitar'
 );

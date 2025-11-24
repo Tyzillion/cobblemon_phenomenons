@@ -1,7 +1,24 @@
 q.array(
+    'chesnaught',
+    'crobat',
+    'decidueye',
     'dondozo',
     'goodra',
     'goomy',
+    'kingdra',
+    'meganium',
+    'milotic',
+    'nidoking',
+    'nidoqueen',
+    'poliwrath',
+    'relicanth',
+    'rillaboom',
+    'rotom_wash',
+    'sceptile',
+    'serperior',
     'sliggoo',
-    'tatsugiri'
+    'tatsugiri',
+    'torterra',
+    'venusaur',
+    'vileplume'
 );

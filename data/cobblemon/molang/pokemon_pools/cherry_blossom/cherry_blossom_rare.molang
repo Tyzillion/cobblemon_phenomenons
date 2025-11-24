@@ -1,4 +1,14 @@
 q.array(
-    'florges', 
-    'shaymin'
+    'chesnaught',
+    'corviknight',
+    'crobat',
+    'decidueye',
+    'florges',
+    'meganium',
+    'pidgeot',
+    'rillaboom',
+    'sceptile',
+    'serperior',
+    'torterra',
+    'venusaur'
 );

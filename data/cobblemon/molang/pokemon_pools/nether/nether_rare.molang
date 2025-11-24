@@ -1,4 +1,14 @@
 q.array(
-    'moltres', 
-    'heatran'
+    'blaziken',
+    'chandelure',
+    'charizard',
+    'cinderace',
+    'coalossal',
+    'emboar',
+    'grimmsnarl',
+    'hydreigon',
+    'incineroar',
+    'infernape',
+    'krookodile',
+    'typhlosion'
 );

@@ -1,6 +1,16 @@
 q.array(
+    'chesnaught',
+    'decidueye',
     'gallade',
     'gardevoir',
     'kirlia',
-    'ralts'
+    'meganium',
+    'ralts',
+    'rillaboom',
+    'sceptile',
+    'scizor',
+    'serperior',
+    'torterra',
+    'venusaur',
+    'volcarona'
 );

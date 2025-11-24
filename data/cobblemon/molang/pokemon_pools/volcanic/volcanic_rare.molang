@@ -1,6 +1,18 @@
 q.array(
-    'charizard', 
-    'moltres', 
-    'blaziken', 
-    'groudon'
+    'aggron',
+    'blaziken',
+    'chandelure',
+    'charizard',
+    'cinderace',
+    'coalossal',
+    'emboar',
+    'gigalith',
+    'golem',
+    'incineroar',
+    'infernape',
+    'krookodile',
+    'machamp',
+    'rhyperior',
+    'typhlosion',
+    'tyranitar'
 );
