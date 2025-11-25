@@ -4,7 +4,7 @@
     "sounds": [
       {
         "name": "cobblemon:rustling_grass",
-        "volume": 0.5,
+        "volume": 0.6,
         "attenuation_distance": 64.0
       }
     ]
@@ -14,7 +14,7 @@
     "sounds": [
       {
         "name": "cobblemon:rustling_sand",
-        "volume": 0.5,
+        "volume": 0.6,
         "attenuation_distance": 64.0
       }
     ]
@@ -22,17 +22,17 @@
   "rocky_rustling": {
     "subtitle": "Rocky Phenomenon",
     "sounds": [
-      { "name": "cobblemon:rocky_rustle", "volume": 0.5, "attenuation_distance": 64.0 },
-      { "name": "cobblemon:rocky_rustle2", "volume": 0.5, "attenuation_distance": 64.0 },
-      { "name": "cobblemon:rocky_rustle3", "volume": 0.5, "attenuation_distance": 64.0 }
+      { "name": "cobblemon:rocky_rustle", "volume": 0.6, "attenuation_distance": 64.0 },
+      { "name": "cobblemon:rocky_rustle2", "volume": 0.6, "attenuation_distance": 64.0 },
+      { "name": "cobblemon:rocky_rustle3", "volume": 0.6, "attenuation_distance": 64.0 }
     ]
   },
   "water_ripple": {
     "subtitle": "Water Ripple Phenomenon",
     "sounds": [
-      { "name": "cobblemon:water_ripple", "volume": 0.5, "attenuation_distance": 64.0 },
-      { "name": "cobblemon:water_ripple2", "volume": 0.5, "attenuation_distance": 64.0 },
-      { "name": "cobblemon:water_ripple3", "volume": 0.5, "attenuation_distance": 64.0 }
+      { "name": "cobblemon:water_ripple", "volume": 0.6, "attenuation_distance": 64.0 },
+      { "name": "cobblemon:water_ripple2", "volume": 0.6, "attenuation_distance": 64.0 },
+      { "name": "cobblemon:water_ripple3", "volume": 0.6, "attenuation_distance": 64.0 }
     ]
   },
   "pokemon.flee": {
