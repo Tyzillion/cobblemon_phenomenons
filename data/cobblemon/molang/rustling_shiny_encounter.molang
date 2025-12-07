@@ -1,8 +1,8 @@
 t.playercombo = q.player;
 v.global_data = t.playercombo.world.server.data;
-v.combo_enabled = v.global_data.phenomenon_combo_enabled;
+v.combo_enabled = !v.global_data.phenomenon_combo_enabled;
 v.current_combo = t.playercombo.data.kocatch_combo;
-v.show_combo_messages = v.global_data.phenomenon_show_combo_messages;
+v.show_combo_messages = !v.global_data.phenomenon_show_combo_messages;
 
 v.combo_enabled ? {
     (v.current_combo > 0) ? {

@@ -2,9 +2,9 @@ v.npc = q.npc;
 v.player = q.player;
 v.global_data = v.player.world.server.data;
 
-v.combo_enabled = v.global_data.phenomenon_combo_enabled;
-v.combo_bonus_enabled = v.global_data.phenomenon_combo_bonus_enabled;
-v.show_combo_messages = v.global_data.phenomenon_show_combo_messages;
+v.combo_enabled = !v.global_data.phenomenon_combo_enabled;
+v.combo_bonus_enabled = !v.global_data.phenomenon_combo_bonus_enabled;
+v.show_combo_messages = !v.global_data.phenomenon_show_combo_messages;
 v.require_right_click = v.global_data.phenomenon_require_right_click;
 
 t.biome_list = q.array(

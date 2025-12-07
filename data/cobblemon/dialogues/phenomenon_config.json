@@ -1,5 +1,5 @@
 {
-"initializationAction": "v.global = q.player.world.server; v.combo_enabled = v.global.data.phenomenon_combo_enabled; v.require_right_click = v.global.data.phenomenon_require_right_click; v.show_combo_messages = v.global.data.phenomenon_show_combo_messages; v.combo_bonus_enabled = v.global.data.phenomenon_combo_bonus_enabled;",
+"initializationAction": "v.global = q.player.world.server; v.combo_enabled = !v.global.data.phenomenon_combo_enabled; v.require_right_click = v.global.data.phenomenon_require_right_click; v.show_combo_messages = !v.global.data.phenomenon_show_combo_messages; v.combo_bonus_enabled = !v.global.data.phenomenon_combo_bonus_enabled;",
     "speakers": {},
     "pages": [
         {
@@ -67,12 +67,12 @@
                     {
                         "text": "Enable Combo Feature",
                         "value": "enable",
-                        "action": "v.global.data.phenomenon_combo_enabled = true; v.combo_enabled = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_combo_enabled = false; v.combo_enabled = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Disable Combo Feature",
                         "value": "disable",
-                        "action": "v.global.data.phenomenon_combo_enabled = false; v.combo_enabled = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_combo_enabled = true; v.combo_enabled = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Back",
@@ -131,12 +131,12 @@
                     {
                         "text": "Show Combo Messages",
                         "value": "show",
-                        "action": "v.global.data.phenomenon_show_combo_messages = true; v.show_combo_messages = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_show_combo_messages = false; v.show_combo_messages = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Hide Combo Messages",
                         "value": "hide",
-                        "action": "v.global.data.phenomenon_show_combo_messages = false; v.show_combo_messages = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_show_combo_messages = true; v.show_combo_messages = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Back",
@@ -164,12 +164,12 @@
                     {
                         "text": "Enable Combo Bonuses",
                         "value": "enable",
-                        "action": "v.global.data.phenomenon_combo_bonus_enabled = true; v.combo_bonus_enabled = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_combo_bonus_enabled = false; v.combo_bonus_enabled = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Disable Combo Bonuses",
                         "value": "disable",
-                        "action": "v.global.data.phenomenon_combo_bonus_enabled = false; v.combo_bonus_enabled = false; v.global.save_data(); q.player.tell('§7[DEBUG] Set combo_bonus_enabled=false, save_result=' + v.save_result + ', current_value=' + v.global.data.phenomenon_combo_bonus_enabled); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_combo_bonus_enabled = true; v.combo_bonus_enabled = false; v.global.save_data(); q.player.tell('§7[DEBUG] Set combo_bonus_enabled=false, save_result=' + v.save_result + ', current_value=' + v.global.data.phenomenon_combo_bonus_enabled); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Back",
@@ -192,7 +192,7 @@
                     {
                         "text": "§cYes, Reset Everything",
                         "value": "yes",
-                        "action": "v.global.data.phenomenon_combo_enabled = true; v.global.data.phenomenon_require_right_click = false; v.global.data.phenomenon_show_combo_messages = true; v.global.data.phenomenon_combo_bonus_enabled = true; v.combo_enabled = true; v.require_right_click = false; v.show_combo_messages = true; v.combo_bonus_enabled = true; v.global.save_data(); q.player.tell('§aAll phenomenon settings have been reset to defaults!'); q.player.tell('§7[DEBUG] Reset all settings, save_result=' + v.save_result); q.dialogue.set_page('main_menu');"
+                        "action": "v.global.data.phenomenon_combo_enabled = false; v.global.data.phenomenon_require_right_click = false; v.global.data.phenomenon_show_combo_messages = false; v.global.data.phenomenon_combo_bonus_enabled = false; v.combo_enabled = true; v.require_right_click = false; v.show_combo_messages = true; v.combo_bonus_enabled = true; v.global.save_data(); q.player.tell('§aAll phenomenon settings have been reset to defaults!'); q.player.tell('§7[DEBUG] Reset all settings, save_result=' + v.save_result); q.dialogue.set_page('main_menu');"
                     },
                     {
                         "text": "Cancel",

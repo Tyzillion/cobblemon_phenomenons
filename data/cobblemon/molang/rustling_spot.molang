@@ -1,9 +1,9 @@
 v.npc = q.entity;
 t.detection_radius = 4.0;
 
-v.combo_enabled = v.npc.world.server.data.phenomenon_combo_enabled;
-v.combo_bonus_enabled = v.npc.world.server.data.phenomenon_combo_bonus_enabled;
-v.show_combo_messages = v.npc.world.server.data.phenomenon_show_combo_messages;
+v.combo_enabled = !v.npc.world.server.data.phenomenon_combo_enabled;
+v.combo_bonus_enabled = !v.npc.world.server.data.phenomenon_combo_bonus_enabled;
+v.show_combo_messages = !v.npc.world.server.data.phenomenon_show_combo_messages;
 v.require_right_click = v.npc.world.server.data.phenomenon_require_right_click;
 
 t.biome_list = q.array(
