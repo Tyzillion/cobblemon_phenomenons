@@ -5,8 +5,8 @@
   ],
   "presets": [],
   "interaction": {
-    "type": "script", 
-    "script": "cobblemon:rustling_spot"
+    "type": "script",
+    "script": "cobblemon:rustling_spot_click"
   },
   "canDespawn": true,
   "battleConfiguration": {

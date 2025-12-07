@@ -3,11 +3,21 @@
     "speakers": {},
     "pages": [
         {
-            "id": "greeting",
+            "id": "player",
+            "lines": [
+                "Enter Player Username then press Enter."
+            ],
+            "input": {
+                "type": "text",
+                "action": "v.target_player = q.player.world.server.get_player_by_username(v.selected_option); q.dialogue.next_page('combo');"
+            }
+        },
+        {
+            "id": "combo",
             "lines": ["Input new combo value:"],
             "input": {
                 "type": "text",
-                "action": "q.player.data.kocatch_combo = q.to_number(v.selected_option); q.dialogue.close();"
+                "action": "v.target_player.data.kocatch_combo = q.to_number(v.selected_option); v.target_player.save_data(); q.dialogue.close();"
             }
         }
     ]

@@ -1,0 +1,239 @@
+{
+"initializationAction": "v.global = q.player.world.server; v.combo_enabled = v.global.data.phenomenon_combo_enabled; v.require_right_click = v.global.data.phenomenon_require_right_click; v.show_combo_messages = v.global.data.phenomenon_show_combo_messages; v.combo_bonus_enabled = v.global.data.phenomenon_combo_bonus_enabled;",
+    "speakers": {},
+    "pages": [
+        {
+            "id": "main_menu",
+            "lines": [
+                "§6§lPhenomenon Configuration",
+                "§7Configure your phenomenon encounter settings"
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "Toggle Combo Feature",
+                        "value": "toggle_combo",
+                        "action": "q.dialogue.set_page('toggle_combo');"
+                    },
+                    {
+                        "text": "Toggle Right-Click Requirement",
+                        "value": "toggle_right_click",
+                        "action": "q.dialogue.set_page('toggle_right_click');"
+                    },
+                    {
+                        "text": "Toggle Combo Messages",
+                        "value": "toggle_messages",
+                        "action": "q.dialogue.set_page('toggle_messages');"
+                    },
+                    {
+                        "text": "Toggle Combo Bonuses",
+                        "value": "toggle_bonus",
+                        "action": "q.dialogue.set_page('toggle_bonus');"
+                    },
+                    {
+                        "text": "Reset All Settings",
+                        "value": "reset",
+                        "action": "q.dialogue.set_page('confirm_reset');"
+                    },
+                    {
+                        "text": "View Current Settings",
+                        "value": "view",
+                        "action": "q.dialogue.set_page('view_settings');"
+                    },
+                    {
+                        "text": "Close",
+                        "value": "close",
+                        "action": "q.dialogue.close();"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "toggle_combo",
+            "lines": [
+                "§6Combo Feature",
+                {
+                    "type": "expression",
+                    "expression": "'§7Currently: §b' + (v.combo_enabled ? 'Enabled' : 'Disabled')"
+                },
+                "§7When disabled, combo counter won't increase and bonuses won't apply."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "Enable Combo Feature",
+                        "value": "enable",
+                        "action": "v.global.data.phenomenon_combo_enabled = true; v.combo_enabled = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Disable Combo Feature",
+                        "value": "disable",
+                        "action": "v.global.data.phenomenon_combo_enabled = false; v.combo_enabled = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('main_menu');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "toggle_right_click",
+            "lines": [
+                "§6Right-Click Requirement",
+                {
+                    "type": "expression",
+                    "expression": "'§7Currently: §b' + (v.require_right_click ? 'Required' : 'Not Required')"
+                },
+                "§7When enabled, you must right-click phenomenon spots instead of running into them."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "Require Right-Click",
+                        "value": "require",
+                        "action": "v.global.data.phenomenon_require_right_click = true; v.require_right_click = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Don't Require Right-Click",
+                        "value": "dont_require",
+                        "action": "v.global.data.phenomenon_require_right_click = false; v.require_right_click = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('main_menu');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "toggle_messages",
+            "lines": [
+                "§6Combo Messages",
+                {
+                    "type": "expression",
+                    "expression": "'§7Currently: §b' + (v.show_combo_messages ? 'Shown' : 'Hidden')"
+                },
+                "§7When disabled, combo-related chat messages won't be displayed."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "Show Combo Messages",
+                        "value": "show",
+                        "action": "v.global.data.phenomenon_show_combo_messages = true; v.show_combo_messages = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Hide Combo Messages",
+                        "value": "hide",
+                        "action": "v.global.data.phenomenon_show_combo_messages = false; v.show_combo_messages = false; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('main_menu');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "toggle_bonus",
+            "lines": [
+                "§6Combo Bonuses",
+                {
+                    "type": "expression",
+                    "expression": "'§7Currently: §b' + (v.combo_bonus_enabled ? 'Enabled' : 'Disabled')"
+                },
+                "§7When disabled, combo won't affect shiny rates, HA rates, levels, or marks.",
+                "§7Note: Combo feature must be enabled for this to work."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "Enable Combo Bonuses",
+                        "value": "enable",
+                        "action": "v.global.data.phenomenon_combo_bonus_enabled = true; v.combo_bonus_enabled = true; v.global.save_data(); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Disable Combo Bonuses",
+                        "value": "disable",
+                        "action": "v.global.data.phenomenon_combo_bonus_enabled = false; v.combo_bonus_enabled = false; v.global.save_data(); q.player.tell('§7[DEBUG] Set combo_bonus_enabled=false, save_result=' + v.save_result + ', current_value=' + v.global.data.phenomenon_combo_bonus_enabled); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('main_menu');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "confirm_reset",
+            "lines": [
+                "§c§lAre you sure?",
+                "§7This will reset all phenomenon configuration settings to their defaults."
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "§cYes, Reset Everything",
+                        "value": "yes",
+                        "action": "v.global.data.phenomenon_combo_enabled = true; v.global.data.phenomenon_require_right_click = false; v.global.data.phenomenon_show_combo_messages = true; v.global.data.phenomenon_combo_bonus_enabled = true; v.combo_enabled = true; v.require_right_click = false; v.show_combo_messages = true; v.combo_bonus_enabled = true; v.global.save_data(); q.player.tell('§aAll phenomenon settings have been reset to defaults!'); q.player.tell('§7[DEBUG] Reset all settings, save_result=' + v.save_result); q.dialogue.set_page('main_menu');"
+                    },
+                    {
+                        "text": "Cancel",
+                        "value": "cancel",
+                        "action": "q.dialogue.set_page('main_menu');"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "view_settings",
+            "lines": [
+                "§6§lCurrent Settings:",
+                {
+                    "type": "expression",
+                    "expression": "'§7Combo Feature: §b' + (v.combo_enabled ? 'Enabled' : 'Disabled')"
+                },
+                {
+                    "type": "expression",
+                    "expression": "'§7Right-Click Required: §b' + (v.require_right_click ? 'Yes' : 'No')"
+                },
+                {
+                    "type": "expression",
+                    "expression": "'§7Show Combo Messages: §b' + (v.show_combo_messages ? 'Yes' : 'No')"
+                },
+                {
+                    "type": "expression",
+                    "expression": "'§7Combo Bonuses: §b' + (v.combo_bonus_enabled ? 'Enabled' : 'Disabled')"
+                }
+            ],
+            "input": {
+                "type": "option",
+                "vertical": true,
+                "options": [
+                    {
+                        "text": "Back",
+                        "value": "back",
+                        "action": "q.dialogue.set_page('main_menu');"
+                    }
+                ]
+            }
+        }
+    ]
+}

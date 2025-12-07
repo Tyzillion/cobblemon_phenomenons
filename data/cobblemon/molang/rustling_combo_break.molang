@@ -1,11 +1,15 @@
 t.playercombo = q.player;
+v.global_data = t.playercombo.world.server.data;
+v.combo_enabled = v.global_data.phenomenon_combo_enabled;
 v.current_combo = t.playercombo.data.kocatch_combo;
+v.show_combo_messages = v.global_data.phenomenon_show_combo_messages;
 
-(v.current_combo > 1) ? {
-    t.playercombo.tell('§c§l-Combo Broken! §7Your combo was reset. Previous combo: ' + v.current_combo);
-    t.playercombo.tell('§7Reason: ' + v.reason);
-    t.playercombo.data.kocatch_combo = 0;
-    t.playercombo.save_data();
-} : {
-    t.playercombo.tell('§7No active combo to break.');
+v.combo_enabled ? {
+    (v.current_combo > 1) ? {
+        v.show_combo_messages ? t.playercombo.tell('§c§l-Combo Broken! §7Your combo was reset. Previous combo: ' + v.current_combo);
+        t.playercombo.data.kocatch_combo = 0;
+        t.playercombo.save_data();
+    } : {
+        v.show_combo_messages ? t.playercombo.tell('§7No active combo to break.');
+    };
 };

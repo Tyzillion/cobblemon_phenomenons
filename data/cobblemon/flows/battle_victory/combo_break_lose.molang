@@ -1,8 +1,5 @@
-t.wild_winner = c.winners;
+t.player_losers = c.player_losers;
 
-for_each(t.wild_winners, t.wild_winner, {
-    t.wild_winners.is_wild ? {
-        v.reason = 'You lost the battle!';
-        q.run_script('cobblemon:rustling_combo_break');
-    };
+for_each(t.player_loser, t.player_losers, {
+    q.run_command('runmolangscript cobblemon:rustling_combo_break ' + t.player_loser.player.username);
 });

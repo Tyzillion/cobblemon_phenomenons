@@ -1,33 +1,37 @@
 t.playercombo = q.player;
+v.global_data = t.playercombo.world.server.data;
+v.combo_enabled = v.global_data.phenomenon_combo_enabled;
 v.current_combo = t.playercombo.data.kocatch_combo;
 
-v.new_combo = v.current_combo + 1;
-t.playercombo.data.kocatch_combo = v.new_combo;
-t.playercombo.save_data();
+v.combo_enabled ? {
+    v.new_combo = v.current_combo + 1;
+    t.playercombo.data.kocatch_combo = v.new_combo;
+    t.playercombo.save_data();
 
-(v.new_combo == 5) ? {
-    t.playercombo.tell('§a§lRustling Combo x5!', true);
-    t.playercombo.tell('§7Bonus: Slightly increased rare Pokémon chances');
-};
-(v.new_combo == 10) ? {
-    t.playercombo.tell('§6§lRustling Combo x10!', true);
-    t.playercombo.tell('§7Bonus: Moderately increased rare Pokémon chances + 2 bonus levels');
-};
-(v.new_combo == 20) ? {
-    t.playercombo.tell('§c§lRustling Combo x20!', true);
-    t.playercombo.tell('§7Bonus: Significantly increased rare Pokémon chances + 5 bonus levels');
-};
-(v.new_combo == 50) ? {
-    t.playercombo.tell('§5§lRustling Combo x50!', true);
-    t.playercombo.tell('§7Bonus: Maximum rare Pokémon chances + 10 bonus levels + higher special Mark chance!');
-};
-(v.new_combo == 60) ? {
-    t.playercombo.tell('§d§lRustling Combo x60!', true);
-    t.playercombo.tell('§7Bonus: 10% chance for Hidden Ability Pokémon!');
-};
-(v.new_combo == 100) ? {
-    t.playercombo.tell('§d§lRustling Combo x100! §7Shiny hunter mode activated!', true);
-    t.playercombo.tell('§7Bonus: 2% chance for a shiny Pokémon!');
-};
+    (v.new_combo == 5) ? {
+        t.playercombo.tell('§a§lRustling Combo x5!', true);
+        t.playercombo.tell('§7Bonus: Slightly increased rare Pokémon chances');
+    };
+    (v.new_combo == 10) ? {
+        t.playercombo.tell('§6§lRustling Combo x10!', true);
+        t.playercombo.tell('§7Bonus: Moderately increased rare Pokémon chances + 2 bonus levels');
+    };
+    (v.new_combo == 20) ? {
+        t.playercombo.tell('§c§lRustling Combo x20!', true);
+        t.playercombo.tell('§7Bonus: Significantly increased rare Pokémon chances + 5 bonus levels');
+    };
+    (v.new_combo == 50) ? {
+        t.playercombo.tell('§5§lRustling Combo x50!', true);
+        t.playercombo.tell('§7Bonus: Maximum rare Pokémon chances + 10 bonus levels + higher special Mark chance!');
+    };
+    (v.new_combo == 60) ? {
+        t.playercombo.tell('§d§lRustling Combo x60!', true);
+        t.playercombo.tell('§7Bonus: 10% chance for Hidden Ability Pokémon!');
+    };
+    (v.new_combo == 100) ? {
+        t.playercombo.tell('§d§lRustling Combo x100! §7Shiny hunter mode activated!', true);
+        t.playercombo.tell('§7Bonus: 2% chance for a shiny Pokémon!');
+    };
 
-t.playercombo.tell('§a§l+1 Rustling Combo! §7Total: ' + v.new_combo, true);
+    t.playercombo.tell('§a§l+1 Rustling Combo! §7Total: ' + v.new_combo, true);
+};

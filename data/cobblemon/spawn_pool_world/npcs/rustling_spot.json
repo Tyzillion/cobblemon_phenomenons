@@ -4,11 +4,28 @@
     {
       "id": "Phenomenon",
       "npc": "rustlingspot",
-      "presets": ["natural", "treetop"],
+      "presets": ["natural"],
       "type": "npc",
       "context": "grounded",
       "bucket": "common",
-      "weight": 5,
+      "weight": 15,
+      "level": "1",
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      }
+    },
+    {
+      "id": "Phenomenon_TreeTop",
+      "npc": "rustlingspot",
+      "presets": [
+        "treetop"
+      ],
+      "type": "npc",
+      "context": "grounded",
+      "bucket": "common",
+      "weight": 15,
       "level": "1",
       "condition": {
         "biomes": [

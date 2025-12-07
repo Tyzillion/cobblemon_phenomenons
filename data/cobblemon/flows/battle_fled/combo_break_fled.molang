@@ -1,2 +1,5 @@
-v.reason = 'You fled from battle!';
-q.run_script('cobblemon:rustling_combo_break');
+t.players = c.players;
+
+for_each(t.player, t.players, {
+    q.run_command('runmolangscript cobblemon:rustling_combo_break ' + t.player.player.username);
+});
